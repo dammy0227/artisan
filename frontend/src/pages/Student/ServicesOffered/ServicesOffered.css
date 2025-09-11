@@ -1,0 +1,115 @@
+.services-offered {
+  padding: 40px 0;
+  text-align: center;
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.services-offered h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #0c0091;
+}
+
+.service-wrapper{
+      flex: 40%;
+      text-align: left !important;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+}
+
+.service-wrapper > p{
+      font-size: 13px;
+      color: grey;
+}
+
+.service-wrapper >button{
+      width: fit-content;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: lighter;
+       background-color:#00a63f;
+       padding: 10px 20px;
+       font-size: 18px;
+      transition: transform 0.3s, box-shadow 0.3s;
+}
+.service-wrapper >h3{
+      background: color-mix(in srgb, #00a63f, transparent 95%);
+      color:#008a34;
+      width: fit-content;
+      padding: 10px;
+      font-weight: lighter;
+}
+
+.service-wrapper>button:hover {
+  transform: translateY(-8px);
+
+}
+
+.service-wrapper >h1{
+      color:#0c0091 ;
+      font-size: 25px;
+}
+.services-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  justify-content: center;
+  align-items: stretch;
+  flex: 60%;
+}
+
+.service-card {
+  background: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0px 6px 15px rgba(0,0,0,0.15);
+}
+
+.service-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.service-content {
+  padding: 20px;
+  text-align: left;
+  position: relative;
+}
+
+.service-content h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color:#0c0091;
+}
+
+.service-content p {
+  font-size: 0.8rem;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+
+@media (max-width: 768px) {
+  .services-offered {
+    flex-direction: column;   
+    gap: 30px;
+    text-align: center;       
+    padding:  20px;
+  }
+}

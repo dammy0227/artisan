@@ -1,0 +1,94 @@
+/* src/pages/artisan/profile/UpdatingProfile.css */
+
+.update-profile {
+  max-width: 1000px;
+  margin: 10px auto;
+  padding: 25px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.update-profile h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color:  #0c0091 ;
+  font-size: 1.8rem;
+}
+
+.update-profile form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.update-profile input,
+.update-profile textarea,
+.update-profile button {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.update-profile input:focus,
+.update-profile textarea:focus {
+  border-color: #008a34;
+}
+
+.update-profile textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.update-profile label {
+  font-weight: 500;
+  color: #333;
+  margin-top: 5px;
+}
+
+.update-profile input[type="checkbox"] {
+  width: auto;
+  margin-left: 8px;
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+.update-profile button {
+  background: #008a34;
+  color: white;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.update-profile button:hover:not(:disabled) {
+  background: #008a34;
+}
+
+.update-profile button:disabled {
+  background: #6c757d;
+  cursor: not-allowed;
+}
+
+/* Success & Error Messages */
+.update-profile .success {
+  color: #28a745;
+  background: #e9f9ef;
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 0.95rem;
+}
+
+.update-profile .error {
+  color: #dc3545;
+  background: #fde8e9;
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 0.95rem;
+}

@@ -1,0 +1,174 @@
+/* ReviewRating.css */
+
+.review-container {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.title {
+  text-align: center;
+  color: #0c0091;
+  margin-bottom: 2rem;
+  font-size: 2.2rem;
+  font-weight: 700;
+}
+
+.review-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.review-card {
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e9ecef;
+  transition: all 0.3s ease;
+  flex: 1 1 calc(33.333% - 1.5rem);
+  min-width: 300px;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+}
+
+.review-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.review-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.student-info-wrapper {
+  flex: 1;
+}
+
+.student-name {
+  color: #0c0091;
+  margin: 0 0 0.3rem 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.student-info {
+  color: #6c757d;
+  margin: 0;
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+.star-rating {
+  display: flex;
+  gap: 0.2rem;
+}
+
+.star {
+  color: #ddd;
+  font-size: 1.1rem;
+  transition: color 0.2s ease;
+}
+
+.star.filled {
+  color: #ffc107;
+}
+
+.review-text {
+  color: #495057;
+  line-height: 1.6;
+  margin: 1rem 0;
+  flex: 1;
+  font-style: italic;
+  border-left: 3px solid #ffc107;
+  padding-left: 1rem;
+}
+
+.review-date {
+  color: #6c757d;
+  font-size: 0.85rem;
+  margin: 0;
+  text-align: right;
+  font-style: italic;
+}
+
+.message {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #6c757d;
+  padding: 2rem;
+}
+
+.message.error {
+  color: #dc3545;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .review-list {
+    gap: 1.2rem;
+  }
+  
+  .review-card {
+    flex: 1 1 calc(50% - 1.2rem);
+    min-width: 280px;
+  }
+}
+
+@media (max-width: 768px) {
+  .review-container {
+    padding: 1rem;
+  }
+  
+  .title {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .review-list {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .review-card {
+    flex: 1 1 100%;
+    max-width: 100%;
+    min-width: unset;
+    width: 100%;
+  }
+  
+  .review-header {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .star-rating {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .review-card {
+    padding: 1.2rem;
+    border-radius: 12px;
+  }
+  
+  .student-name {
+    font-size: 1.1rem;
+  }
+  
+  .review-text {
+    font-size: 0.95rem;
+    padding-left: 0.8rem;
+  }
+}

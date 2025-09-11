@@ -1,0 +1,78 @@
+/* Navbar Styles */
+.landing-navbar {
+  background: #099c41;
+  padding: 10px 70px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  color: white;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.landing-icon > h3 {
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.landing-nav-list {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  gap: 20px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.landing-nav-list li a,
+.landing-icon > h3 {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.landing-nav-list li a:hover,
+.landing-icon > h3:hover {
+  color: green;
+}
+
+
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .landing-navbar {
+  padding: 20px 10px;
+  align-items: center;
+}
+
+.landing-icon >h3{
+      font-size: 20px;
+}
+  .landing-nav-list {
+    position: absolute;
+    top: 55px;
+    right: -100%;
+    flex-direction: column;
+    background: #00a63f;
+    width: 100%;
+    padding: 20px;
+    transition: right 0.3s ease-in-out;
+  }
+
+  .landing-nav-list.active {
+    right: 0;
+  }
+
+  .landing-nav-list.active-menu {
+    right: 0;
+  }
+
+
+  .landing-navbar {
+  padding: 5px;
+}
+
+}

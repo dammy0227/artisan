@@ -1,0 +1,244 @@
+.book-artisan-container {
+  padding: 20px;
+}
+
+.book-artisan-container{
+  color: #0c0091;
+}
+
+.book-artisan-container h2 {
+  font-size: 22px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.artisan-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.artisan-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  transition: box-shadow 0.3s ease;
+  width: 350px
+}
+
+.artisan-card:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.artisan-card h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.artisan-card p {
+  margin: 4px 0;
+  font-size: 14px;
+  color: #333;
+}
+
+.artisan-description {
+  font-size: 13px;
+  color: #666;
+}
+
+.artisan-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.artisan-actions button {
+  flex: 1;
+  padding: 10px;
+  font-size: 12px;
+  /* font-weight: 600; */
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.artisan-actions .btn-view {
+  background: #007bff;
+  color: white;
+}
+
+.artisan-actions .btn-view:hover {
+  background: #0056b3;
+}
+
+.artisan-actions .btn-book {
+  background: #28a745;
+  color: white;
+}
+
+.artisan-actions .btn-book:hover {
+  background: #1e7e34;
+}
+
+.previous-works {
+  margin-top: 14px;
+  border-top: 1px solid #ddd;
+  padding-top: 12px;
+}
+
+.previous-works img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.previous-works p {
+  margin-top: 6px;
+  font-size: 14px;
+  color: #444;
+}
+
+.previous-works .description {
+  font-size: 12px;
+  color: #777;
+}
+
+
+/* Profile photo wrapper */
+.artisan-photo {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+/* Profile image itself */
+.artisan-photo img {
+  width: 120px;           /* fixed width for consistency */
+  height: 120px;          /* fixed height */
+  object-fit: cover;      /* crop image nicely */
+  border-radius: 50%;     /* make it circular */
+  border: 2px solid #ddd; /* subtle border */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+}
+
+.artisan-photo img:hover {
+  transform: scale(1.05); /* slight zoom effect on hover */
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  width: 600px;
+  max-width: 95%;
+  border-radius: 10px;
+  text-align: center;
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  cursor: pointer;
+  font-size: 20px;
+  color: red;
+}
+
+.previous-work-image {
+  width: 100%;
+  height: auto;
+  margin: 10px 0;
+  border-radius: 8px;
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.nav-btn {
+  padding: 8px 16px;
+  background: #007bff;
+  border: none;
+  color: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.nav-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+/* --- Booking Modal --- */
+.modal-textarea {
+  width: 100%;
+  height: 80px;
+  padding: 8px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.modal-input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.btn-cancel {
+  background: #ccc;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn-submit {
+  background: #007bff;
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}

@@ -1,0 +1,125 @@
+.contact-section {
+  padding: 15px 20px;
+  background: #f5f5f5;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.contact-section h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color:#0c0091;
+}
+
+.contact-subtitle {
+  margin-bottom: 40px;
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Wrapper - single card look */
+.contact-wrapper {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  border-radius: 12px;
+  overflow: hidden; /* makes corners smooth */
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  background: #fff;
+}
+
+/* Left side - Image with overlay */
+.contact-image {
+  flex: 1;
+  min-width: 300px;
+  position: relative; /* needed for overlay */
+}
+
+.contact-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* keeps image nice */
+  display: block;
+}
+
+.contact-image::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+    background: rgba(0, 138, 52, 0.4); /* green overlay */
+}
+
+/* Right side - Form */
+.contact-form {
+  flex: 1;
+  padding: 30px;
+  text-align: left;
+  background: #fff;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  font-weight: 600;
+  margin-bottom: 8px;
+  display: block;
+  color: #333;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  font-size: 1rem;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #008a34;
+}
+
+.submit-btn {
+  width: 100%;
+  background: #008a34;
+  color: #fff;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.submit-btn:hover {
+  background: green;
+}
+
+/* ✅ Responsive */
+@media (max-width: 768px) {
+  .contact-wrapper {
+    flex-direction: column;
+  }
+  .contact-image {
+    height: 250px; /* keep image visible on mobile */
+  }
+
+
+  .contact-section h1 {
+  font-size: 1.5rem;
+}
+
+.contact-subtitle {
+  margin-bottom: 20px;
+  font-size: 0.8rem;
+
+}
+
+}

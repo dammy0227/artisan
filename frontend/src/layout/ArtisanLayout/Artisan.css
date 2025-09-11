@@ -1,0 +1,116 @@
+.artisan-container {
+  display: flex;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+/* Sidebar */
+.artisan-sidebar {
+  width: 270px;
+  background: #008a34; /* nice dark navy gradient */
+  color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  border-right: 1px solid #334155;
+  transition: background 0.3s;
+}
+
+.artisan-sidebar h2 {
+  margin-bottom: 2rem;
+  color: #f9fafb;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+/* Nav */
+.artisan-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1;
+}
+
+.artisan-button {
+  background: none;
+  border: none;
+  color: white; /* ✅ all text white */
+  padding: 0.75rem 1rem;
+  text-align: left;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.artisan-button.active {
+  background-color: lightgreen; /* bright blue highlight */
+  color: white;
+}
+
+.artisan-button:hover {
+  background-color: lightgreen; /* subtle hover effect */
+  transform: translateX(4px);
+}
+
+.logout-button {
+  margin-top: auto;
+  background-color: #dc2626; /* red logout */
+  color: white;
+  font-weight: bold;
+  border-radius: 6px;
+}
+
+.logout-button:hover {
+  background-color: #b91c1c;
+}
+
+/* Main content */
+.artisan-main {
+  flex: 1;
+  padding: 2rem;
+  background-color: whitesmoke;
+  overflow-y: auto;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .artisan-container {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .artisan-sidebar {
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    padding: 0.5rem;
+    overflow-x: auto;
+    border-right: none;
+    border-bottom: 1px solid #334155;
+  }
+
+  .artisan-sidebar h2 {
+    margin: 0 1rem 0 0;
+    font-size: 1rem;
+  }
+
+  .artisan-nav {
+    flex-direction: row;
+    gap: 0.5rem;
+    flex: 1;
+  }
+
+  .artisan-button {
+    padding: 0.5rem 0.75rem;
+    white-space: nowrap;
+  }
+
+  .logout-button {
+    margin-left: auto;
+    margin-top: 0;
+  }
+
+  .artisan-main {
+    padding: 1rem;
+  }
+}

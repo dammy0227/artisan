@@ -1,0 +1,25 @@
+.register-input{
+      margin: 10px 0;
+}
+
+.register-title{
+      color:#0c0091 ;
+}
+
+.register-button{
+      padding: 10px;
+      width: 100%;
+      color:white ;
+      background-color: #00a63f;
+      border-radius: 5px;
+}
+
+.register-button:hover{
+      background-color: #00a63f;
+}
+
+@media (max-width: 768px) {
+  .register-title {
+   font-size: 17px;
+}
+}

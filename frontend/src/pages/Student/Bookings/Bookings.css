@@ -1,0 +1,151 @@
+/* ====== Bookings Page (Student) ====== */
+.booking-container {
+  max-width: 1000px;
+  margin: 30px auto;
+  padding: 20px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: left;
+  color: #0c0091 !important;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.booking-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  background: #fff;
+}
+
+.booking-table th,
+.booking-table td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.booking-table thead {
+  background-color: #f7f7f7;
+  color: #333;
+  font-weight: 600;
+}
+
+.booking-table tr:hover {
+  background-color: #f9f9f9;
+}
+
+.subtext {
+  font-size: 12px;
+  color: #666;
+  line-height: 1.4;
+}
+
+.status {
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+/* Status colors */
+.status.pending {
+  color: #d39e00;
+}
+.status.accepted {
+  color: #28a745;
+}
+.status.completed {
+  color: #0c0091;
+}
+.status.cancelled {
+  color: #dc3545;
+}
+
+/* Feedback messages */
+.loading,
+.error,
+.no-bookings {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 16px;
+}
+
+.error {
+  color: #dc3545;
+}
+
+.loading {
+  color: #555;
+}
+
+.no-bookings {
+  color: #777;
+}
+
+/* ====== Responsive Styles ====== */
+@media (max-width: 768px) {
+  .title {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .booking-table th,
+  .booking-table td {
+    font-size: 13px;
+    padding: 8px;
+  }
+
+  .subtext {
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 600px) {
+  /* Convert table to card view */
+  .booking-table,
+  .booking-table thead,
+  .booking-table tbody,
+  .booking-table th,
+  .booking-table td,
+  .booking-table tr {
+    display: block;
+    width: 100%;
+  }
+
+  .booking-table thead {
+    display: none; /* Hide header on small screens */
+  }
+
+  .booking-table tr {
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 12px;
+    background: #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  }
+
+  .booking-table td {
+    border: none;
+    padding: 6px 0;
+    text-align: left;
+    font-size: 14px;
+  }
+
+  .booking-table td:before {
+    content: attr(data-label);
+    font-weight: 600;
+    display: block;
+    margin-bottom: 4px;
+    color: #2c3e50;
+  }
+}
