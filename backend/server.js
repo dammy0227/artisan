@@ -33,11 +33,12 @@ initSocket(server);
 app.use(cors({
   origin: [
     "https://artisan-sigma.vercel.app",
-    "http://localhost:5173"                 // local dev
+    "http://localhost:5173"
   ],
-  methods: ["GET", "POST"],
+  methods: ["*"],   // allows all
   credentials: true,
 }));
+
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
