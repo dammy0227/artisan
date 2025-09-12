@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { loginArtisan } from "../../../features/artisan/artisanThunks";
 import { useNavigate } from "react-router-dom";
-import "./ArtisanLogin.css";
+import "./Artisanlogin.css";
 
 
 const ArtisanLogin = () => {
