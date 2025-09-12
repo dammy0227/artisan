@@ -30,7 +30,15 @@ const server = http.createServer(app);
 initSocket(server);
 
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin: [
+    "https://artisan-bh5avzpa0-damilares-projects-235f98ae.vercel.app", // production
+    "http://localhost:5173"                 // local dev
+  ],
+  methods: ["GET", "POST"],
+  credentials: true,
+}));
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(morgan("dev"));
