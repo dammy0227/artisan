@@ -32,7 +32,7 @@ initSocket(server);
 // Middleware
 app.use(cors({
   origin: [
-    "https://artisan-bh5avzpa0-damilares-projects-235f98ae.vercel.app", // production
+    "https://artisan-sigma.vercel.app",
     "http://localhost:5173"                 // local dev
   ],
   methods: ["GET", "POST"],
