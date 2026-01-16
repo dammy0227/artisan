@@ -1,4 +1,3 @@
-// Testimonials.jsx
 import React from "react";
 import Slider from "react-slick";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";

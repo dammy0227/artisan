@@ -1,9 +1,7 @@
 import api from './api';
 
 const artisanService = {
-  // --------------------------
-  // Auth & Profile
-  // --------------------------
+
   register: async (formData) => {
     const res = await api.post('/artisan/register', formData, {
       headers: { 'Content-Type': 'multipart/form-data' }
@@ -23,9 +21,6 @@ const artisanService = {
     return res.data;
   },
 
-  // --------------------------
-  // Previous Works
-  // --------------------------
   addPreviousWork: async (formData) => {
     const res = await api.post('/artisan/previous-work', formData, {
       headers: { 'Content-Type': 'multipart/form-data' }

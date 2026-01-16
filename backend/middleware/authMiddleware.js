@@ -1,9 +1,9 @@
 import Student from "../models/Student.js";
 import Artisan from "../models/Artisan.js";
 import Admin from "../models/Admin.js";
-import { verifyToken } from "../utils/jwt.js"; // import your existing utility
+import { verifyToken } from "../utils/jwt.js"; 
 
-// Middleware to verify JWT and attach user to req.user
+
 export const protect = async (req, res, next) => {
   let token;
 
@@ -29,7 +29,7 @@ export const protect = async (req, res, next) => {
         return res.status(401).json({ message: "User not found" });
       }
 
-      // ✅ Keep the role from token
+  
       user.role = decoded.role;
       req.user = user;
 

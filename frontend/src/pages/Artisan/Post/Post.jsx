@@ -20,7 +20,7 @@ const Post = () => {
   const [image, setImage] = useState(null);
   const [selectedImage, setSelectedImage] = useState(null);
 
-  // Inline edit states
+
   const [editingWorkId, setEditingWorkId] = useState(null);
   const [editTitle, setEditTitle] = useState("");
   const [editDescription, setEditDescription] = useState("");
@@ -90,7 +90,7 @@ const Post = () => {
       {error && <p className="error">{error}</p>}
       {loading && <p>Loading previous works...</p>}
 
-      {/* Add New Work Form */}
+ 
       <motion.form
         onSubmit={handleSubmit}
         className="post-form"
@@ -118,7 +118,7 @@ const Post = () => {
         </button>
       </motion.form>
 
-      {/* Previous Works */}
+     
       <div className="works-list">
         {!loading && previousWorks?.length === 0 && (
           <p>No previous works yet.</p>

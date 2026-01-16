@@ -24,7 +24,6 @@ const reviewSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
-      // 🔹 Create review
       .addCase(createReview.pending, (state) => {
         state.loading = true;
       })

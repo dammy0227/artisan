@@ -1,8 +1,7 @@
-// src/pages/Auth/StudentRegister.jsx
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { registerStudent } from "../../../features/student/studentThunks";
-import './register.css'
+import './register.css';
 
 const StudentRegister = ({ onSuccess }) => {
   const [formData, setFormData] = useState({
@@ -16,7 +15,7 @@ const StudentRegister = ({ onSuccess }) => {
   const [submitted, setSubmitted] = useState(false);
 
   const dispatch = useDispatch();
-  const { successMessage, error } = useSelector((s) => s.student);
+  const { successMessage, error, loading } = useSelector((s) => s.student);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -26,42 +25,63 @@ const StudentRegister = ({ onSuccess }) => {
 
   useEffect(() => {
     if (successMessage && onSuccess) {
-      onSuccess();   // ✅ tell parent "success happened"
+      onSuccess();
     }
   }, [successMessage, onSuccess]);
 
   return (
-    <div className="register-container">
-      <form onSubmit={handleSubmit} className="register-form">
-        <h2 className="register-title">Student Registration</h2>
+    <div className="register-page">
+      <form onSubmit={handleSubmit} className="register-card">
+        <h2 className="register-heading">Student Registration</h2>
 
-        <input type="text" placeholder="Full Name" className="register-input"
+        {submitted && error && <p className="form-error">{error}</p>}
+
+        <input
+          type="text"
+          placeholder="Full Name"
+          className="form-input"
           value={formData.name}
           onChange={(e) => setFormData({ ...formData, name: e.target.value })}
         />
-        <input type="email" placeholder="Email" className="register-input"
+        <input
+          type="email"
+          placeholder="Email"
+          className="form-input"
           value={formData.email}
           onChange={(e) => setFormData({ ...formData, email: e.target.value })}
         />
-        <input type="password" placeholder="Password" className="register-input"
+        <input
+          type="password"
+          placeholder="Password"
+          className="form-input"
           value={formData.password}
           onChange={(e) => setFormData({ ...formData, password: e.target.value })}
         />
-        <input type="text" placeholder="Faculty" className="register-input"
+        <input
+          type="text"
+          placeholder="Faculty"
+          className="form-input"
           value={formData.faculty}
           onChange={(e) => setFormData({ ...formData, faculty: e.target.value })}
         />
-        <input type="text" placeholder="Department" className="register-input"
+        <input
+          type="text"
+          placeholder="Department"
+          className="form-input"
           value={formData.department}
           onChange={(e) => setFormData({ ...formData, department: e.target.value })}
         />
-        <input type="text" placeholder="Phone Number" className="register-input"
+        <input
+          type="text"
+          placeholder="Phone Number"
+          className="form-input"
           value={formData.phone}
           onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
         />
 
-        <button type="submit" className="register-button">Register</button>
-        {submitted && error && <p className="register-error">{error}</p>}
+        <button type="submit" className="form-button" disabled={loading}>
+          {loading ? "Registering..." : "Register"}
+        </button>
       </form>
     </div>
   );

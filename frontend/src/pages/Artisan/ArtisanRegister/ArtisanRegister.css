@@ -1,159 +1,225 @@
-/* Outer Container */
-.register-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 1rem;
-  min-height: 100vh;
-  background: #f9fafb;
-
-  /* ✅ Always allow scrolling if content is taller */
+.artisanRegister-container {
+  margin: 0 auto;
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  height: 90vh;
   overflow-y: auto;
 }
 
-/* Form */
-.register-form {
-  background: #ffffff;
-  padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
-  max-width: 500px;
-  width: 100%;
+.artisanRegister-form {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-
-  /* ✅ scroll inside form if fields overflow */
-  max-height: 90vh;
-  overflow-y: auto;
+  gap: 10px;
+  max-height: calc(80vh - 60px); 
 }
 
-/* Title */
-.register-title {
-  font-size: 1.8rem;
-  font-weight: bold;
-   color:#0c0091 ;
+.artisanRegister-title {
   text-align: center;
-  margin-bottom: 1rem;
+  color: #00a63f;
+  margin-bottom: 5px;
+  font-size: 1.8rem;
 }
 
-/* Inputs */
-.register-form input,
-.register-form textarea,
-.register-form button {
-  padding: 0.8rem 1rem;
-  border: 1px solid #d1d5db;
-  border-radius: 8px;
-  font-size: 1rem;
+/* Input fields styling */
+.artisanRegister-form input[type="text"],
+.artisanRegister-form input[type="email"],
+.artisanRegister-form input[type="password"],
+.artisanRegister-form input[type="number"],
+.artisanRegister-form textarea {
   width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: border-color 0.3s;
+  box-sizing: border-box;
 }
 
-.register-form input:focus,
-.register-form textarea:focus {
+.artisanRegister-form input:focus,
+.artisanRegister-form textarea:focus {
   outline: none;
   border-color: #00a63f;
-  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
+  box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.1);
 }
 
-/* Labels */
-.register-form label {
-  font-size: 0.9rem;
-  font-weight: 500;
-  color: #374151;
+.artisanRegister-form textarea {
+  min-height: 50px;
+  resize: vertical;
+  font-family: inherit;
+}
+
+/* Flex row layouts */
+.artisanRegister-flexRow {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.artisanRegister-flexRow > * {
+  flex: 1;
+  min-width: 0; 
+}
+
+/* Availability checkbox styling */
+.artisanRegister-flexRow label {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 8px;
+  white-space: nowrap;
+  font-size: 14px;
+  color: #555;
 }
 
-/* Textarea */
-.register-form textarea {
-  resize: vertical;
-  min-height: 80px;
+.artisanRegister-flexRow input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  margin: 0;
 }
 
-/* Button */
-.register-form button {
-  background: #00a63f;
-  color: #fff;
+/* File upload row */
+.artisanRegister-fileRow {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.artisanRegister-fileRow > div {
+  flex: 1;
+  min-width: 200px;
+}
+
+.artisanRegister-fileRow label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #555;
+  font-weight: 500;
+}
+
+.artisanRegister-fileRow input[type="file"] {
+  width: 100%;
+  padding: 8px;
+  border: 1px dashed #ddd;
+  border-radius: 6px;
+  background-color: #f9f9f9;
+  font-size: 13px;
+}
+
+/* Submit button */
+.artisanRegister-form button[type="submit"] {
+  background-color: #00a63f;
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 6px;
+  font-size: 16px;
   font-weight: 600;
   cursor: pointer;
-  transition: background 0.2s ease-in-out;
+  transition: background-color 0.3s;
+  margin-top: 10px;
 }
 
-.register-form button:disabled {
-  background: #93c5fd;
+.artisanRegister-form button[type="submit"]:hover:not(:disabled) {
+  background-color: #00a63f;
+}
+
+.artisanRegister-form button[type="submit"]:disabled {
+  background-color: #cccccc;
   cursor: not-allowed;
 }
 
-.register-form button:hover:not(:disabled) {
-  background: #00a63f;
+/* Error message */
+.artisanRegister-error {
+  color: #e74c3c;
+  text-align: center;
+  font-size: 14px;
+  margin-top: 5px;
+  padding: 10px;
+  background-color: #ffeaea;
+  border-radius: 6px;
 }
 
-/* Error Message */
-.register-error {
-  color: #dc2626;
-  font-size: 0.9rem;
-  margin-top: -0.5rem;
-  text-align: center;
-}
-
-/* Pending Page */
-.pending-container {
-  text-align: center;
+/* Pending page styling */
+.artisanPending-container {
   max-width: 500px;
-  margin: 2rem auto;
-  background: #ffffff;
-  padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
-
-  /* ✅ scroll support */
-  max-height: 90vh;
-  overflow-y: auto;
+  margin: 0 auto;
+  background-color: white;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.pending-container h2 {
-  color: #16a34a;
-  margin-bottom: 1rem;
+.artisanPending-container h2 {
+  color: #27ae60;
+  margin-bottom: 20px;
 }
 
-.pending-container button {
-  margin-top: 1rem;
-  padding: 0.8rem 1.2rem;
-  background: #00a63f;
-  color: #fff;
+.artisanPending-container p {
+  color: #555;
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+.artisanPending-container button {
+  background-color: #00a63f;
+  color: white;
   border: none;
-  border-radius: 8px;
+  padding: 12px 30px;
+  border-radius: 6px;
+  font-size: 16px;
   cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 20px;
 }
 
-.pending-container button:hover {
-  background: #00a63f;
+.artisanPending-container button:hover {
+  background-color: #00a63f;
 }
 
-/* 📱 Mobile Responsiveness */
-@media (max-width: 600px) {
-  .register-container {
-    padding: 0.5rem;
+/* Responsive adjustments */
+@media (max-height: 700px) {
+  .artisanRegister-form {
+    gap: 15px;
   }
-
-  .register-form {
-    padding: 1rem;
-    gap: 0.7rem;
-
-    /* ✅ scroll more aggressively on small screens */
-    max-height: 85vh;
-    overflow-y: auto;
+  
+  .artisanRegister-form input[type="text"],
+  .artisanRegister-form input[type="email"],
+  .artisanRegister-form input[type="password"],
+  .artisanRegister-form input[type="number"] {
+    padding: 10px 12px;
   }
-
-  .register-title {
-    font-size: 1.4rem;
+  
+  .artisanRegister-form textarea {
+    min-height: 60px;
   }
+}
 
-  .register-form input,
-  .register-form textarea,
-  .register-form button {
-    font-size: 0.9rem;
-    padding: 0.6rem 0.8rem;
+@media (max-width: 768px) {
+  .artisanRegister-container {
+    padding: 30px;
+    /* margin: 10px; */
+    height: 99vh;
+  }
+  
+  .artisanRegister-flexRow,
+  .artisanRegister-fileRow {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .artisanRegister-fileRow > div {
+    min-width: 100%;
+  }
+  
+  .artisanPending-container {
+    padding: 20px;
+    margin: 10px;
   }
 }

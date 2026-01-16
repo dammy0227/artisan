@@ -5,7 +5,7 @@ let io;
 export const initSocket = (server) => {
   io = new Server(server, {
     cors: {
-      origin: "*", // ⚠ Change this to your frontend URL in production
+      origin: "*", 
     },
   });
 

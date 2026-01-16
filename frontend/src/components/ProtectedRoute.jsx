@@ -1,4 +1,3 @@
-// src/components/ProtectedRoute.jsx
 import React from "react";
 import { Navigate } from "react-router-dom";
 import { useSelector } from "react-redux";
@@ -11,7 +10,7 @@ const ProtectedRoute = ({ children, role }) => {
   let isAuthenticated = false;
   let userRole = null;
 
-  // ✅ Check if logged in and set role
+
   if (adminToken && admin) {
     isAuthenticated = true;
     userRole = "admin";
@@ -23,7 +22,7 @@ const ProtectedRoute = ({ children, role }) => {
     userRole = "artisan";
   }
 
-  // ✅ Not authenticated → go to role-specific login/landing
+
   if (!isAuthenticated) {
     switch (role) {
       case "admin":
@@ -31,13 +30,13 @@ const ProtectedRoute = ({ children, role }) => {
       case "artisan":
         return <Navigate to="/artisan" replace />;
       case "student":
-        return <Navigate to="/" replace />; // LandingPage for students
+        return <Navigate to="/" replace />; 
       default:
         return <Navigate to="/" replace />;
     }
   }
 
-  // ✅ Authenticated but wrong role → send to their dashboard
+ 
   if (role && userRole !== role) {
     switch (userRole) {
       case "admin":

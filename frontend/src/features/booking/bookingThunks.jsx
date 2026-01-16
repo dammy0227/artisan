@@ -1,4 +1,3 @@
-// src/features/booking/bookingThunks.js
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import bookingService from "../../services/bookingService";
 

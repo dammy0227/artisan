@@ -15,9 +15,7 @@ const AdminDashboard = () => {
   
 
   const handleLogout = () => {
-    // Dispatch Redux action to logout
     dispatch(logoutAdmin());
-    // Redirect to login page
      navigate("/admin", { replace: true });
   };
 

@@ -1,17 +1,16 @@
-// models/Artisan.js
 import mongoose from "mongoose";
 
 const previousWorkSchema = new mongoose.Schema({
   title: { type: String, required: true },
   description: { type: String },
-  image: { type: String }, // Cloudinary URL
+  image: { type: String }, 
   createdAt: { type: Date, default: Date.now }
 });
 
 const artisanSchema = new mongoose.Schema(
   {
     fullName: { type: String, required: true, trim: true },
-    description: { type: String }, // artisan bio
+    description: { type: String }, 
     skillCategory: { type: String, required: true },
     phone: { type: String, required: true },
     availability: { type: Boolean, default: true },

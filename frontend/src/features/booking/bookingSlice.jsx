@@ -1,4 +1,3 @@
-// src/features/booking/bookingSlice.js
 import { createSlice } from "@reduxjs/toolkit";
 import {
   createBooking,
@@ -25,7 +24,7 @@ const bookingSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
-      // Create booking
+      
       .addCase(createBooking.pending, (state) => {
         state.loading = true;
       })
@@ -39,7 +38,7 @@ const bookingSlice = createSlice({
         state.error = action.payload;
       })
 
-      // Get bookings for student
+      
       .addCase(getBookingsByStudent.pending, (state) => {
         state.loading = true;
       })
@@ -52,7 +51,7 @@ const bookingSlice = createSlice({
         state.error = action.payload;
       })
 
-      // Get bookings for artisan
+    
       .addCase(getBookingsByArtisan.pending, (state) => {
         state.loading = true;
       })
@@ -65,7 +64,6 @@ const bookingSlice = createSlice({
         state.error = action.payload;
       })
 
-      // Update booking status
       .addCase(updateBookingStatus.pending, (state) => {
         state.loading = true;
       })

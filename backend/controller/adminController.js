@@ -3,10 +3,9 @@ import { generateToken } from "../utils/jwt.js";
 import Admin from "../models/Admin.js";
 import Artisan from "../models/Artisan.js";
 import Booking from "../models/Booking.js";
-import Student from "../models/Student.js"; // ✅ Add this
+import Student from "../models/Student.js"; 
 
 
-// Admin login
 export const loginAdmin = async (req, res) => {
   try {
     const { email, password } = req.body;
@@ -27,6 +26,7 @@ export const loginAdmin = async (req, res) => {
     res.status(500).json({ msg: "Server error" });
   }
 };
+
 
 // Analytics
 export const getAnalytics = async (req, res) => {

@@ -1,16 +1,16 @@
 .book-artisan-container {
   padding: 20px;
+  max-width: 1200px;
+  margin: auto;
 }
 
-.book-artisan-container{
-  color: #0c0091;
-}
 
 .book-artisan-container h2 {
   font-size: 22px;
   font-weight: bold;
   text-align: center;
   margin-bottom: 16px;
+
 }
 
 .search-input {
@@ -241,4 +241,132 @@
   border: none;
   border-radius: 6px;
   cursor: pointer;
+}
+
+
+
+/* ===============================
+   MOBILE RESPONSIVENESS
+================================ */
+
+/* Tablets and below */
+@media (max-width: 768px) {
+  .book-artisan-container {
+    padding: 14px;
+  }
+
+  .book-artisan-container h2 {
+    font-size: 18px;
+  }
+
+  .artisan-grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 14px;
+  }
+
+  .artisan-card {
+    width: 100%; /* remove fixed width */
+    padding: 14px;
+  }
+
+  .artisan-card h3 {
+    font-size: 16px;
+  }
+
+  .artisan-card p {
+    font-size: 13px;
+  }
+
+  .artisan-description {
+    font-size: 12px;
+  }
+
+  .artisan-photo img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .artisan-actions {
+    flex-direction: column;
+  }
+
+  .artisan-actions button {
+    font-size: 13px;
+    padding: 10px;
+  }
+
+  /* Modal */
+  .modal-content {
+    width: 90%;
+    padding: 16px;
+  }
+
+  .previous-work-image {
+    max-height: 220px;
+    object-fit: cover;
+  }
+}
+
+/* Phones */
+@media (max-width: 480px) {
+  .search-input {
+    font-size: 13px;
+    padding: 9px;
+  }
+
+  .artisan-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .artisan-card {
+    border-radius: 10px;
+  }
+
+  .artisan-photo img {
+    width: 90px;
+    height: 90px;
+  }
+
+  .artisan-card h3 {
+    font-size: 15px;
+    text-align: center;
+  }
+
+  .artisan-card p {
+    font-size: 12px;
+    text-align: center;
+  }
+
+  .artisan-description {
+    text-align: center;
+  }
+
+  .artisan-actions {
+    gap: 8px;
+  }
+
+  /* Navigation buttons in modal */
+  .navigation {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .nav-btn {
+    width: 100%;
+  }
+
+  /* Booking modal inputs */
+  .modal-textarea,
+  .modal-input {
+    font-size: 13px;
+  }
+
+  .modal-actions {
+    flex-direction: column;
+  }
+
+  .btn-cancel,
+  .btn-submit {
+    width: 100%;
+  }
 }

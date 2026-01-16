@@ -1,9 +1,8 @@
-// src/pages/Student/Profile/Profile.jsx
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getStudentById, updateStudent } from "../../../features/student/studentThunks";
 import { clearStudentMessages } from "../../../features/student/studentSlice";
-import "./Profile.css"; // ✅ Import external CSS
+import "./Profile.css"; 
 
 const Profile = () => {
   const dispatch = useDispatch();

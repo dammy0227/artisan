@@ -1,9 +1,7 @@
 import api from './api';
 
 const studentService = {
-  // --------------------------
-  // Auth & Profile
-  // --------------------------
+
   register: async (data) => {
     const res = await api.post('/student/register', data);
     return res.data;
@@ -24,9 +22,7 @@ const studentService = {
     return res.data;
   },
 
-  // --------------------------
-  // Artisans
-  // --------------------------
+
   getArtisans: async (filters) => {
     const params = new URLSearchParams(filters).toString();
     const res = await api.get(`/student/artisans?${params}`);
@@ -38,9 +34,7 @@ const studentService = {
     return res.data;
   },
 
-  // --------------------------
-  // Previous Works of Artisans
-  // --------------------------
+  
   getPreviousWorksByArtisan: async (artisanId) => {
     const res = await api.get(`/student/artisans/${artisanId}/previous-works`);
     return res.data;

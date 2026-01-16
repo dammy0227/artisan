@@ -1,4 +1,3 @@
-// src/pages/Admin/Chart/Chart.jsx
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getAnalytics } from "../../../features/admin/adminThunks";

@@ -1,5 +1,5 @@
 import dotenv from "dotenv";
-dotenv.config(); // Ensure .env is loaded before using process.env
+dotenv.config(); 
 
 import { v2 as cloudinary } from "cloudinary";
 
@@ -10,3 +10,4 @@ cloudinary.config({
 });
 
 export default cloudinary;
+ 

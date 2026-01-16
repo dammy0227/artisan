@@ -66,7 +66,7 @@ export const getBookingByArtisan = async (req, res) => {
   }
 };
 
-// Update booking status (Artisan only)
+
 // Update booking status (Artisan only)
 export const updateBookingStatus = async (req, res) => {
   try {
@@ -80,6 +80,7 @@ export const updateBookingStatus = async (req, res) => {
     if (!booking) {
       return res.status(404).json({ message: "Booking not found" });
     }
+
 
     // Only artisan can change status
     if (booking.artisan._id.toString() !== artisanId) {

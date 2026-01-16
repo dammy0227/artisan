@@ -17,7 +17,7 @@ export const registerArtisan = async (req, res) => {
     const hashedPassword = await bcrypt.hash(password, salt);
 
     let profilePhoto = null;
-    let verificationDocs = [];
+    let verificationDocs = []; 
 
     try {
       profilePhoto = req.files?.profilePhoto?.[0]?.path || null;
@@ -132,7 +132,7 @@ export const getArtisans = async (req, res) => {
   try {
     const { category, name, location } = req.query;
 
-    let filter = { status: "approved" }; // ✅ Only approved artisans
+    let filter = { status: "approved" }; 
     if (category) filter.skillCategory = category;
     if (name) filter.fullName = { $regex: name, $options: "i" };
     if (location) filter.location = { $regex: location, $options: "i" };
@@ -157,6 +157,7 @@ export const approveArtisan = async (req, res) => {
 
     if (!artisan) return res.status(404).json({ message: "Artisan not found" });
 
+
     // send email + notification
     await sendEmail(
       artisan.email,
@@ -170,6 +171,7 @@ export const approveArtisan = async (req, res) => {
     res.status(500).json({ msg: "Server error"});
   }
 };
+
 
 // Reject Artisan (used by admin)
 export const rejectArtisan = async (req, res) => {
@@ -197,6 +199,7 @@ export const rejectArtisan = async (req, res) => {
 };
 
 
+
 // Get artisans (pending + approved) for admin
 export const getArtisansForAdmin = async (req, res) => {
   try {
@@ -210,7 +213,8 @@ export const getArtisansForAdmin = async (req, res) => {
     res.status(500).json({ msg: "Server error" });
   }
 };
-  
+
+
 
 // Add Previous Work
 export const addPreviousWork = async (req, res) => {
@@ -230,12 +234,13 @@ export const addPreviousWork = async (req, res) => {
   }
 };
 
+
 // Get a single approved artisan by ID (for students)
 export const getArtisanById = async (req, res) => {
   try {
     const artisan = await Artisan.findOne({
       _id: req.params.id,
-      status: "approved" // ✅ Only approved
+      status: "approved" 
     }).select("-password");
 
     if (!artisan) {
@@ -259,6 +264,7 @@ export const getOwnPreviousWorks = async (req, res) => {
     res.status(500).json({ msg: "Server error", error: error.message });
   }
 };
+
 
 // Get a single previous work by ID for the logged-in artisan
 export const getOwnPreviousWorkById = async (req, res) => {

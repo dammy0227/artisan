@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 import bcrypt from "bcryptjs";
 import Admin from "./models/Admin.js";
-import connectDB from "./config/db.js";      // MongoDB connection
+import connectDB from "./config/db.js";      
 
 dotenv.config();
 
@@ -10,8 +10,7 @@ const seedAdmin = async () => {
   try {
     await connectDB();
 
-    // Check if admin already exists
-    const existingAdmin = await Admin.findOne({ email: "admin@example.com" });
+    const existingAdmin = await Admin.findOne({ email: "dammy@gmail.com" });
     if (existingAdmin) {
       console.log("✅ Admin already exists");
       process.exit();
@@ -19,11 +18,11 @@ const seedAdmin = async () => {
 
     // Hash password
     const salt = await bcrypt.genSalt(10);
-    const hashedPassword = await bcrypt.hash("admin123", salt); // replace with your own password
+    const hashedPassword = await bcrypt.hash("dammy123", salt); 
 
     const admin = await Admin.create({
       name: "Super Admin",
-      email: "admin@example.com",  // replace with your email
+      email: "dammy@gmail.com",  
       password: hashedPassword,
       phone: "08020304050",
     });

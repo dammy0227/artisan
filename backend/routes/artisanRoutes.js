@@ -16,9 +16,6 @@ import upload from "../utils/multer.js";
 
 const router = express.Router();
 
-// =====================
-// ✅ Public Routes
-// =====================
 router.post(
   "/register",
   upload.fields([
@@ -30,13 +27,11 @@ router.post(
 
 router.post("/login", loginArtisan);
 
-// =====================
-// ✅ Protected Artisan Routes
-// =====================
-router.use(protect);                   // All routes below require authentication
-router.use(authorizeRoles("artisan")); // Only artisan can access
 
-// Update artisan profile
+router.use(protect);              
+router.use(authorizeRoles("artisan")); 
+
+
 router.put(
   "/update",
   upload.fields([
@@ -46,27 +41,25 @@ router.put(
   updateArtisan
 );
 
-// Add a previous work
+
 router.post(
   "/previous-work",
-  upload.single("image"), // expects a single image file
+  upload.single("image"), 
   addPreviousWork
 );
 
-// Get all previous works of logged-in artisan
+
 router.get("/previous-works", getOwnPreviousWorks);
 
-// Get a single previous work by ID for logged-in artisan
 router.get("/previous-works/:workId", getOwnPreviousWorkById);
 
-// Update a previous work of logged-in artisan
+
 router.put(
   "/previous-works/:workId",
   upload.single("image"),
   updatePreviousWork
 );
 
-// Delete a previous work of logged-in artisan
 router.delete("/previous-works/:workId", deletePreviousWork);
 
 export default router;

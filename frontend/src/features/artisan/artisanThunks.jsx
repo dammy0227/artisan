@@ -1,9 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import artisanService from "../../services/artisanService";
 
-// --------------------------
-// Auth & Profile
-// --------------------------
+
 export const registerArtisan = createAsyncThunk(
   "artisan/register",
   async (formData, { rejectWithValue }) => {
@@ -43,9 +41,7 @@ export const updateArtisan = createAsyncThunk(
   }
 );
 
-// --------------------------
-// Previous Works
-// --------------------------
+
 export const addPreviousWork = createAsyncThunk(
   "artisan/addPreviousWork",
   async (formData, { rejectWithValue }) => {
@@ -101,9 +97,7 @@ export const deletePreviousWork = createAsyncThunk(
   }
 );
 
-// --------------------------
-// Get All Approved Artisans
-// --------------------------
+
 export const getArtisans = createAsyncThunk(
   "artisan/getArtisans",
   async (filters = {}, { rejectWithValue }) => {

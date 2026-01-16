@@ -1,4 +1,3 @@
-// src/pages/Booking.jsx
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -10,14 +9,13 @@ import "./Booking.css";
 const Booking = () => {
   const dispatch = useDispatch();
 
-  // Get bookings from redux
   const { bookings, loading, error } = useSelector((state) => state.booking || {});
 
   useEffect(() => {
     dispatch(getBookingsByArtisan());
   }, [dispatch]);
 
-  // Handle status updates: accept, cancel, complete
+
   const handleStatusChange = (bookingId, status) => {
     dispatch(updateBookingStatus({ bookingId, status }));
   };

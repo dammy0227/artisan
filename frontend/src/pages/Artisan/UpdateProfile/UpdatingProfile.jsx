@@ -1,4 +1,3 @@
-// src/pages/artisan/profile/UpdatingProfile.jsx
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { updateArtisan } from "../../../features/artisan/artisanThunks";
@@ -23,7 +22,7 @@ const UpdatingProfile = () => {
     verificationDocs: [],
   });
 
-  // Pre-fill form with artisan data
+ 
   useEffect(() => {
     if (artisan) {
       setFormData({
@@ -40,10 +39,8 @@ const UpdatingProfile = () => {
     }
   }, [artisan]);
 
-  // Auto-clear messages after 3s and reset form after success
   useEffect(() => {
     if (successMessage) {
-      // Reset form fields
       setFormData({
         fullName: "",
         description: "",

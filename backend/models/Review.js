@@ -11,7 +11,7 @@ const reviewSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-// Prevent duplicate review by same student for same booking
+
 reviewSchema.index({ student: 1, booking: 1 }, { unique: true });
 
 export default mongoose.model("Review", reviewSchema);

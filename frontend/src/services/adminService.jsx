@@ -1,4 +1,3 @@
-// adminService.js
 import api from './api';
 
 const ensureAdminAuth = () => {
@@ -22,7 +21,7 @@ const adminService = {
 
 getAllArtisans: async () => {
   ensureAdminAuth();
-  const res = await api.get('/admin/artisans'); // new endpoint
+  const res = await api.get('/admin/artisans'); 
   return res.data;
 },
 

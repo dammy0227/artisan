@@ -12,7 +12,7 @@ import {
 
 const initialState = {
   student: null,
-  token: localStorage.getItem("studentToken") || null, // ✅ load token from storage
+  token: localStorage.getItem("studentToken") || null, 
   artisansList: [],
   selectedArtisan: null,
   artisanPreviousWorks: [],
@@ -29,7 +29,7 @@ const studentSlice = createSlice({
     logoutStudent: (state) => {
       state.student = null;
       state.token = null;
-      localStorage.removeItem("studentToken"); // ✅ remove token on logout
+      localStorage.removeItem("studentToken")
     },
     clearStudentMessages: (state) => {
       state.error = null;
@@ -48,7 +48,7 @@ const studentSlice = createSlice({
         state.student = action.payload.student;
         state.token = action.payload.token;
         state.successMessage = action.payload.msg;
-        localStorage.setItem("studentToken", action.payload.token); // ✅ store token
+        localStorage.setItem("studentToken", action.payload.token);
       })
       .addCase(registerStudent.rejected, (state, action) => {
         state.loading = false;
@@ -65,7 +65,7 @@ const studentSlice = createSlice({
         state.student = action.payload.student;
         state.token = action.payload.token;
         state.successMessage = action.payload.msg;
-        localStorage.setItem("studentToken", action.payload.token); // ✅ store token
+        localStorage.setItem("studentToken", action.payload.token); 
       })
       .addCase(loginStudent.rejected, (state, action) => {
         state.loading = false;

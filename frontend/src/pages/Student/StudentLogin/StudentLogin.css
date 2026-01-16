@@ -1,14 +1,15 @@
-.login-input{
-     margin: 10px 0;
-}
+/* .login-wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+} */
 
-.login-button{
-      width: 100%;
-      background-color: #00a63f;
-      color: white;
-      border-radius: 5px;
-}
+/* .login-containers{
+    background-color: white;
+    max-width: 1000px;
+    padding: 20px;
+} */
 
-.Login-title{
-    color:#0c0091 ;
-}
+/* .login-inputs{
+    width: 100%;
+} */

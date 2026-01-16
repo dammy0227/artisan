@@ -17,7 +17,7 @@ const BookArtisan = () => {
   const [selectedArtisan, setSelectedArtisan] = useState(null);
   const [currentWorkIndex, setCurrentWorkIndex] = useState(0);
 
-  // Booking modal state
+  
   const [showBookingModal, setShowBookingModal] = useState(false);
   const [bookingDetails, setBookingDetails] = useState({
     jobDetails: "",
@@ -25,12 +25,11 @@ const BookArtisan = () => {
   });
   const [selectedArtisanForBooking, setSelectedArtisanForBooking] = useState(null);
 
-  // Fetch artisans on mount
+  
   useEffect(() => {
     dispatch(getArtisans());
   }, [dispatch]);
 
-  // Filter artisans in real-time based on search input
   const filteredArtisans = artisansList.filter(
     (artisan) =>
       artisan.fullName?.toLowerCase().includes(searchInput.toLowerCase()) ||
@@ -38,7 +37,7 @@ const BookArtisan = () => {
       artisan.location?.toLowerCase().includes(searchInput.toLowerCase())
   );
 
-  // Open booking modal
+
   const openBookingModal = (artisan) => {
     setSelectedArtisanForBooking(artisan);
     setShowBookingModal(true);

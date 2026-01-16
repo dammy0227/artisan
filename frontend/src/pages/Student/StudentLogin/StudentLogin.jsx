@@ -1,4 +1,3 @@
-// src/pages/Auth/StudentLogin.jsx
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { loginStudent } from "../../../features/student/studentThunks";
@@ -25,12 +24,13 @@ const StudentLogin = () => {
 
   return (
     <div className="login-container">
-      <form onSubmit={handleSubmit} className="login-form">
-        <h2 className="login-title">Student Login</h2>
+      <form onSubmit={handleSubmit} className="login-forms">
+        <h2 className="login-titles">Student Login</h2>
 
         {submitted && error && <p className="login-error">{error}</p>}
 
-        <input
+        <div className="login-wrapper">
+           <input
           type="email"
           placeholder="Email"
           className="login-input"
@@ -51,6 +51,8 @@ const StudentLogin = () => {
         <button type="submit" className="login-button" disabled={loading}>
           {loading ? "Logging in..." : "Login"}
         </button>
+        </div>
+       
       </form>
     </div>
   );

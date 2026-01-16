@@ -1,4 +1,3 @@
-// src/store/store.js
 import { configureStore } from "@reduxjs/toolkit";
 import storage from "redux-persist/lib/storage";
 import { persistReducer, persistStore } from "redux-persist";
@@ -12,7 +11,7 @@ import reviewReducer from "../features/review/reviewSlice";
 const persistConfig = {
   key: "root",
   storage,
-  whitelist: ["admin", "artisan", "student"], // ✅ Persist only auth slices
+  whitelist: ["admin", "artisan", "student"], 
 };
 
 const rootReducer = {

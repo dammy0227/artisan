@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllStudents, deleteStudent } from "../../../features/admin/adminThunks";
 import { clearAdminMessages } from "../../../features/admin/adminSlice";
-import "./ViewStudent.css"; // 👈 import external CSS
+import "./ViewStudent.css"; 
 
 const ViewStudent = () => {
   const dispatch = useDispatch();
@@ -10,12 +10,12 @@ const ViewStudent = () => {
     (state) => state.admin
   );
 
-  // Fetch students on mount
+  
   useEffect(() => {
     dispatch(getAllStudents());
   }, [dispatch]);
 
-  // Clear messages after 3 seconds
+  
   useEffect(() => {
     if (successMessage || error) {
       const timer = setTimeout(() => {
@@ -35,7 +35,7 @@ const ViewStudent = () => {
     <div className="student-container">
       <h2 className="student-title">All Students</h2>
 
-      {/* Messages */}
+      
       {successMessage && (
         <div className="success-message">{successMessage}</div>
       )}

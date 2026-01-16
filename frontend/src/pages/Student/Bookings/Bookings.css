@@ -1,7 +1,7 @@
 /* ====== Bookings Page (Student) ====== */
 .booking-container {
-  max-width: 1000px;
-  margin: 30px auto;
+    max-width: 1200px;
+  margin: auto;
   padding: 20px;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }

@@ -1,4 +1,3 @@
-// src/pages/Student/Bookings.jsx
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getBookingsByStudent } from "../../../features/booking/bookingThunks";

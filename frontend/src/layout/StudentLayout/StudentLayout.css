@@ -1,105 +1,145 @@
-.student-container {
-  display: flex;
-  height: 100vh;
-  font-family: Arial, sans-serif;
-  padding: 0 !important;
-}
-
-.student-sidebar {
-  width: 270px;
-  background-color: #00a63f;
-  color: white;
+/* ================= CONTAINER ================= */
+.students-container {
   display: flex;
   flex-direction: column;
-  padding: 1rem;
-  border-right: 1px solid #d1d5db;
-  transition: background 0.3s;
+  min-height: 100vh;
+  background: #f9fafb;
+  font-family: Arial, sans-serif;
 }
 
-.student-sidebar h2 {
-  margin-bottom: 2rem;
-  color: white;
+/* ================= NAVBAR ================= */
+.student-sidebar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 72px;
+  z-index: 1000;
+  background: rgba(9, 156, 65, 0.95);
+  backdrop-filter: blur(8px);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px;
 }
 
+/* ================= LOGO ================= */
+.student-sidebar .landing-icon {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.student-sidebar .landing-icon img {
+  height: 100px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* ================= NAV ================= */
 .student-nav {
   display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  flex: 1;
+  align-items: center;
+  gap: 12px;
 }
 
+/* ================= BUTTONS ================= */
 .student-button {
-  background: none;
+  background: transparent;
   border: none;
   color: white;
-  padding: 0.5rem 1rem;
-  text-align: left;
-  border-radius: 4px;
+  padding: 10px 16px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 500;
   cursor: pointer;
-  transition: background 0.3s;
-}
-
-.student-button.active {
-  background-color: lightgreen;
+  transition: all 0.25s ease;
+  white-space: nowrap;
 }
 
 .student-button:hover {
-  background-color: lightgreen;
+  background: green;
 }
 
+.student-button.active {
+  background:green;
+  color: white;
+  font-weight: 600;
+}
+
+/* ================= LOGOUT ================= */
 .logout-button {
-  margin-top: auto;
-  background-color: #dc2626;
+  background: #dc2626;
   color: white;
 }
 
-.student-main {
-  flex: 1;
-  padding: 2rem;
-  background-color: #f9fafb;
-  overflow-y: auto;
+.logout-button:hover {
+  background: #b91c1c;
 }
 
-/* Mobile */
-@media (max-width: 768px) {
-  .student-container {
-    flex-direction: column;
-    height: auto;
-  }
+/* ================= MAIN CONTENT ================= */
+.student-main {
+  margin-top: 72px; /* navbar height */
+  padding: 2rem;
+}
 
+/* ================= TABLET ================= */
+@media (max-width: 1024px) {
   .student-sidebar {
-    width: 100%;
-    flex-direction: row;
-    align-items: center;
-    padding: 0.5rem;
-    overflow-x: auto;
-    border-right: none;
-    border-bottom: 1px solid #d1d5db;
-  }
-
-  .student-sidebar h2 {
-    margin: 0 1rem 0 0;
-    font-size: 1rem;
-  }
-
-  .student-nav {
-    flex-direction: row;
-    gap: 0.5rem;
-    flex: 1;
+    padding: 0 20px;
   }
 
   .student-button {
-    padding: 0.4rem 0.75rem;
-    white-space: nowrap;
+    padding: 8px 14px;
+    font-size: 13px;
+  }
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+  .student-sidebar {
+    height: 64px;
+    padding: 0 14px;
+    overflow-x: auto;
+  }
+
+  .student-sidebar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .student-sidebar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .student-sidebar .landing-icon img {
+    height: 34px;
+  }
+
+  .student-nav {
+    gap: 8px;
+  }
+
+  .student-button {
+    padding: 7px 12px;
+    font-size: 12px;
   }
 
   .logout-button {
-    margin-left: auto;
-    margin-top: 0;
-    font-size: 13px !important;
+    padding: 7px 12px;
+    font-size: 12px;
   }
 
   .student-main {
+    margin-top: 64px;
     padding: 1rem;
+  }
+}
+
+/* ================= SMALL PHONES ================= */
+@media (max-width: 480px) {
+  .student-button {
+    font-size: 11px;
+    padding: 6px 10px;
   }
 }

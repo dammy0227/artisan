@@ -9,7 +9,7 @@ import { logoutStudent } from "../../../features/student/studentSlice";
 import { useNavigate } from "react-router-dom";
 
 const StudentDashboard = () => {
-  const [activeTab, setActiveTab] = useState("bookArtisan"); // ✅ match sidebar default
+  const [activeTab, setActiveTab] = useState("bookArtisan"); 
   const dispatch = useDispatch();
     const navigate = useNavigate();
 

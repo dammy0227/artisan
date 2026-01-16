@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import {
   loginAdmin,
   getAnalytics,
-  getAllArtisans, // ✅ new thunk for both pending + approved
+  getAllArtisans, 
   approveArtisan,
   rejectArtisan,
   getAllStudents,
@@ -13,7 +13,7 @@ const initialState = {
   admin: null,
   token: localStorage.getItem("adminToken") || null,
   analytics: null,
-  artisans: [], // ✅ combined list (pending + approved)
+  artisans: [], 
   students: [],
   loading: false,
   error: null,

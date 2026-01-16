@@ -1,25 +1,98 @@
-.register-input{
-      margin: 10px 0;
+/* ===== PAGE ===== */
+.register-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    margin: 10px;
 }
 
-.register-title{
-      color:#0c0091 ;
+/* ===== CARD ===== */
+.register-card {
+    border-radius: 12px;
+    /* width: 100%; */
+    max-width: 450px;
+    box-sizing: border-box;
+    text-align: center;
+
 }
 
-.register-button{
-      padding: 10px;
-      width: 100%;
-      color:white ;
-      background-color: #00a63f;
-      border-radius: 5px;
+/* ===== HEADING ===== */
+.register-heading {
+    font-size: 26px;
+    font-weight: 700;
+    color:#00a63f;
+    margin-bottom: 25px;
 }
 
-.register-button:hover{
-      background-color: #00a63f;
+/* ===== INPUT FIELDS ===== */
+.form-input {
+    width: 100%;
+    padding: 12px 15px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
 }
 
+.form-input:focus {
+    border-color: #00a63f;
+    outline: none;
+}
+
+/* ===== BUTTON ===== */
+.form-button {
+    width: 100%;
+    padding: 14px;
+    margin-top: 15px;
+    background-color: #00a63f;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.form-button:hover {
+    background-color: #008a32;
+}
+
+.form-button:disabled {
+    background-color: #8cd19d;
+    cursor: not-allowed;
+}
+
+/* ===== ERROR MESSAGE ===== */
+.form-error {
+    color: red;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+/* ===== MOBILE RESPONSIVENESS ===== */
 @media (max-width: 768px) {
-  .register-title {
-   font-size: 17px;
-}
+    .register-card {
+        padding: 1.5rem;
+    }
+
+    .register-heading {
+        font-size: 22px;
+    }
+
+    .form-input {
+        padding: 10px 12px;
+        font-size: 13px;
+    }
+
+    .form-button {
+        font-size: 15px;
+        padding: 12px;
+    }
 }

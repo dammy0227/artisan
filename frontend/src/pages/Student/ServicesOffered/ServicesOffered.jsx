@@ -54,9 +54,7 @@ const ServicesOffered = () => {
             <div className="service-content">
               <h3>{service.title}</h3>
               <p>{service.desc}</p>
-              {/* <button className="arrow-btn">
-                <FaArrowRight />
-              </button> */}
+              
             </div>
           </div>
         ))}

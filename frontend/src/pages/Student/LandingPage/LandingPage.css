@@ -1,248 +1,410 @@
-/* Navbar Styles */
+/* ================= NAVBAR ================= */
 .landing-navbar {
-  background: #099c41;
-  padding: 10px 70px;
   position: fixed;
-  width: 100%;
   top: 0;
-  z-index: 2000; /* higher than other elements */
+  width: 100%;
+  height: 72px;
+  z-index: 2000;
+  background: rgba(9, 156, 65, 0.95);
+  backdrop-filter: blur(8px);
   display: flex;
-  color: white;
   justify-content: space-between;
   align-items: center;
-
+  padding: 0 20px;
+  color: white;
+  box-sizing: border-box; /* Added for proper width calculation */
 }
 
-.landing-icon > h3 {
-  font-size: 25px;
+/* ===== LOGO ===== */
+.landing-icon {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.landing-icon img {
+  height: 60px; /* Reduced from 100px */
+  width: auto;
+  object-fit: contain;
+  display: block;
+  transition: transform 0.25s ease;
   cursor: pointer;
 }
 
+.landing-icon img:hover {
+  transform: scale(1.05);
+}
+
+/* ===== NAV LINKS ===== */
 .landing-nav-list {
   display: flex;
+  gap: 25px;
   list-style: none;
-  justify-content: center;
-  gap: 20px;
-  color: #fff;
-  cursor: pointer;
-  font-size: 16px;
+  margin: 0;
+  padding: 0;
 }
 
-.landing-nav-list li a,
-.landing-icon > h3 {
+.landing-nav-list li a {
   color: white;
   text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
   transition: color 0.3s;
+  padding: 5px 0;
 }
 
-.landing-nav-list li a:hover,
-.landing-icon > h3:hover {
-  color: green;
-}
-
-/* Mobile Menu Icon */
-.menu-icon {
-  display: none;
-  color: white;
-  cursor: pointer;
-  font-size: 20px;
-}
-
-/* Section Styles */
-.section {
-  background: #f5f5f5;
-  padding: 0px 20px;
+.landing-nav-list li a:hover {
+  color: #d1fae5;
 }
 
 .landing-nav-list li a.active {
   border-bottom: 2px solid white;
-  color: #0c0091;
 }
 
-/* Home Section */
+/* ===== MENU ICON ===== */
+.menu-icon {
+  display: none;
+  cursor: pointer;
+  color: white;
+  background: none;
+  border: none;
+  padding: 8px;
+  z-index: 3000;
+}
+
+/* ================= SECTIONS ================= */
+.section {
+  padding: 0;
+  background: #f5f5f5;
+  width: 100%;
+  overflow: hidden; /* Prevent horizontal overflow */
+  box-sizing: border-box;
+}
+
+/* ================= HERO ================= */
 .home-container {
-  background-color: #00a63f;
   min-height: 100vh;
-  padding: 80px 20px 0 20px; /* space for navbar */
-  overflow: hidden;
+  padding: 100px 20px 50px; /* Reduced top padding for mobile */
+  background: linear-gradient(135deg, #f8fafc, #eefcf3);
   display: flex;
   align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 100%;
 }
 
 .home-wrapper {
-  display: flex;
-  justify-content: space-between;
-  height: 100%;
   max-width: 1200px;
-  margin: auto;
-  align-items: center;
-  gap: 35px;
-}
-
-.home-text {
+  width: 100%;
+  margin: 0 auto;
   display: flex;
-  flex-direction: column;
-  gap: 30px;
-  color: white;
-  width: 60%;
-  flex: 60%;
+  align-items: center;
+  gap: 40px;
+  box-sizing: border-box;
 }
 
-.home-text > h1 {
-  font-size: 35px;
+/* ===== TEXT ===== */
+.home-text {
+  flex: 1;
+  width: 100%;
 }
 
-.home-text > p {
-  font-size: 17px;
+.home-text h1 {
+  font-size: 44px;
+  font-weight: 800;
+  line-height: 1.2;
+  color: #0f172a;
+  margin: 0 0 20px 0;
 }
 
-.home-button {
-  padding: 10px;
-  margin-right: 10px;
-  font-size: 17px;
-  width: 150px;
+.home-text h1 span {
+  color: #00a63f;
+}
+
+.home-text p {
+  margin: 0 0 30px 0;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #475569;
+  max-width: 520px;
+}
+
+/* ===== BUTTONS (DESKTOP) ===== */
+.home-actions {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap; /* Added for mobile */
+}
+
+.home-btn {
+  padding: 14px 28px;
   border-radius: 50px;
-  background-color: #0c0091;
-  transition: all 0.2s;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  white-space: nowrap;
+  min-width: 140px; /* Minimum width for buttons */
 }
 
-.home-button:hover {
-  transform: translateY(-8px);
+.home-btn.primary {
+  background: #00a63f;
+  color: white;
 }
 
+.home-btn.primary:hover {
+  background: #008a32;
+  transform: translateY(-3px);
+}
+
+.home-btn.secondary {
+  background: transparent;
+  border: 2px solid #00a63f;
+  color: #00a63f;
+}
+
+.home-btn.secondary:hover {
+  background: #00a63f;
+  color: white;
+}
+
+/* ===== IMAGE ===== */
 .home-image {
-  flex: 40%;
+  flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: all 0.3s;
-   animation: float 4s ease-in-out infinite; /* 4s duration, infinite loop */
- 
 }
 
-.home-image:hover {
-  transform: translateY(-8px);
-  cursor: pointer;
-}
-
-.home-image > img {
-  height: 400px;
+.home-image img {
   max-width: 100%;
+  height: auto;
+  max-height: 420px;
+  object-fit: contain;
 }
 
-@keyframes float {
-  0% {
-    transform: translateY(0);
+/* ================= RESPONSIVE BREAKPOINTS ================= */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .home-wrapper {
+    gap: 30px;
   }
-  50% {
-    transform: translateY(-20px); /* move up */
+  
+  .home-text h1 {
+    font-size: 38px;
   }
-  100% {
-    transform: translateY(0);
+  
+  .home-image img {
+    max-height: 380px;
   }
 }
 
-
-/* Responsive Styles */
+/* Mobile (768px and below) */
 @media (max-width: 768px) {
+  /* NAVBAR */
   .landing-navbar {
-    padding: 10px 20px;
+    height: 64px;
+    padding: 16px;
+
   }
 
-  .landing-icon > h3 {
-    font-size: 20px;
-  }
-
-  .landing-nav-list {
-    position: fixed;
-    top: 55px;
-    right: -100%;
-    flex-direction: column;
-    background: #00a63f;
-    width: 100%;
-    padding: 20px;
-    transition: right 0.3s ease-in-out;
-  }
-
-  .landing-nav-list.active {
-    right: 0;
+  .landing-icon img {
+    height: 48px;
   }
 
   .menu-icon {
     display: block;
   }
 
-  /* Home section mobile layout */
+  .landing-nav-list {
+    position: fixed;
+    top: 64px;
+    left: 0;
+    right: 0;
+    background: linear-gradient(180deg, #00a63f, #008a32);
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0;
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.35s ease-in-out;
+    height: calc(100vh - 64px);
+    padding-top: 40px;
+    z-index: 1999;
+  }
+
+  .landing-nav-list.active-menu {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .landing-nav-list li {
+    width: 100%;
+    text-align: center;
+    padding: 0;
+  }
+
+  .landing-nav-list li a {
+    font-size: 18px;
+    font-weight: 600;
+    padding: 18px 20px;
+    display: block;
+    width: 100%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .landing-nav-list li:last-child a {
+    border-bottom: none;
+  }
+
+  /* HERO */
+  .home-container {
+    padding: 90px 16px 40px; /* Adjusted for fixed navbar */
+    min-height: calc(100vh - 64px); /* Account for navbar */
+  }
+
   .home-wrapper {
-    flex-direction: column; /* Image first then text */
-    padding: 20px;
+    flex-direction: column;
+    gap: 40px;
+    text-align: center;
   }
 
+  .home-text h1 {
+    font-size: 32px;
+    margin-bottom: 16px;
+  }
+
+  .home-text p {
+    font-size: 16px;
+    margin: 0 auto 24px;
+    max-width: 95%;
+  }
+
+  /* MOBILE BUTTONS */
+  .home-actions {
+    margin-top: 0;
+    flex-direction: row;
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
+  }
+
+  .home-btn {
+    width: 100%;
+    max-width: 280px;
+    padding: 14px 24px;
+    font-size: 15px;
+    border-radius: 50px;
+    margin: 0 auto;
+  }
+
+  .home-btn.primary {
+    box-shadow: 0 6px 20px rgba(0, 166, 63, 0.25);
+  }
+
+  /* IMAGE */
   .home-image {
-    order: -1; /* Make image appear first */
-    /* margin-bottom: 20px; */
+    order: -1; /* Move image above text on mobile */
+    margin-bottom: 20px;
   }
-
-  .home-text {
+  
+  .home-image img {
+    max-height: 280px;
     width: 100%;
-    flex: none;
-    gap: 20px;
-  }
-
-  .home-text > h1 {
-    font-size: 35px;
-  }
-
-  .home-text > p {
-    font-size: 15px;
-  }
-
-  .home-button {
-    width: 150px;
-    font-size: 15px;
-    margin-bottom: 40px;
-  }
-
-  .home-image > img {
-    width: 100%;
-    max-width: 500px;
-    height: 500px;
-
   }
 }
 
-
-@media (max-width: 500px) {
-  .home-text > h1 {
-    font-size: 20px;
+/* Small Phones (480px and below) */
+@media (max-width: 480px) {
+  .landing-navbar {
+    padding: 0 12px;
+    height: 60px;
+  }
+  
+  .landing-icon img {
+    height: 42px;
+  }
+  
+  .landing-nav-list {
+    top: 60px;
+    height: calc(100vh - 60px);
   }
 
-    .home-text > p {
+  .home-container {
+    padding: 80px 12px 30px;
+    min-height: calc(100vh - 60px);
+  }
+
+  .home-text h1 {
+    font-size: 28px;
+  }
+
+  .home-text p {
+    font-size: 15px;
+    line-height: 1.5;
+  }
+
+  .home-actions {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .home-btn {
+    max-width: 100%;
+    padding: 13px 20px;
+    font-size: 14px;
+  }
+  
+  .home-image img {
+    max-height: 240px;
+  }
+}
+
+/* Extra Small Phones (360px and below) */
+@media (max-width: 360px) {
+  .home-text h1 {
+    font-size: 24px;
+  }
+
+  .home-text p {
+    font-size: 14px;
+  }
+
+  .home-btn {
+    padding: 12px 16px;
     font-size: 13px;
   }
-
-    .home-image > img {
-    height: 400px;
-
+  
+  .landing-icon img {
+    height: 36px;
   }
-
-
-  .home-button {
-
-  width: 120px;
-
+  
+  .landing-nav-list li a {
+    font-size: 16px;
+    padding: 16px 20px;
+  }
+  
+  .home-image img {
+    max-height: 200px;
+  }
 }
 
-
+/* Ensure modals don't overflow */
+.modal-content {
+  max-width: 95vw;
+  margin: 20px auto;
+  box-sizing: border-box;
 }
 
-@media (max-width: 350px) {
-
-  .home-button {
-  width: 90px;
-  font-size: 10px;
-
-}
-
-
+/* Footer adjustments for mobile */
+.footer {
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
 }

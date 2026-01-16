@@ -1,84 +1,133 @@
-// src/pages/artisan/ArtisanLanding.jsx
 import React, { useState } from "react";
-import { Link } from "react-scroll";
-import { FaBars, FaTimes } from "react-icons/fa";
+import { FaBars, FaTimes, FaInstagram, FaFacebookF, FaTwitter, FaTiktok, FaLinkedinIn } from "react-icons/fa";
 import "./ArtisanLanding.css";
+import Modal from "../../Student/Modal/Modal";
 import ArtisanRegister from "../ArtisanRegister/ArtisanRegister";
 import ArtisanLogin from "../ArtisanLogin/ArtisanLogin";
-import Modal from "../../Student/Modal/Modal";
 import { useDispatch } from "react-redux";
 import { clearArtisanMessages } from "../../../features/artisan/artisanSlice";
-import './ArtisanLanding.css'
+import img from "../../../assets/artisan3.png";
+import img1 from "../../../assets/artisan.png";
 
 const ArtisanLanding = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
   const [showRegister, setShowRegister] = useState(false);
   const [showLogin, setShowLogin] = useState(false);
   const dispatch = useDispatch();
 
-  const openRegister = () => {
-    dispatch(clearArtisanMessages()); // ✅ clear old messages before opening
-    setShowRegister(true);
-  };
-
-  const openLogin = () => {
-    dispatch(clearArtisanMessages()); // ✅ same for login
-    setShowLogin(true);
-  };
-
   return (
     <div>
-      {/* Navbar */}
+      {/* NAVBAR */}
       <nav className="landing-navbar">
         <div className="landing-icon">
-          <h3>
-            <Link to="home">
-              Mapoly
-            </Link>
-          </h3>
+          <img src={img1} alt="logo" />
+        </div>
+
+        <div className="menu-icon" onClick={() => setMenuOpen(!menuOpen)}>
+          {menuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
         </div>
       </nav>
 
-      {/* Hero Section */}
-      <section id="home" className="section home-container">
+      {/* HERO */}
+      <section className="section home-container">
         <div className="home-wrapper">
           <div className="home-text">
-            <h1>Connect With Students Anytime, Anywhere</h1>
+            <h1>
+              Grow Your Skills <br />
+              <span>Get More Jobs</span>
+            </h1>
+
             <p>
-              Join our platform to showcase your skills, connect with students, and
-              grow your career.
+              Join thousands of artisans connecting with real customers.
+              Showcase your skills, accept bookings, and grow your income.
             </p>
-            <div className="button">
-              <button className="home-button" onClick={openRegister}>
-                Get Started
+
+            <div className="home-actions">
+              <button
+                className="home-btn primary"
+                onClick={() => {
+                  dispatch(clearArtisanMessages());
+                  setShowRegister(true);
+                }}
+              >
+                Join as Artisan
               </button>
-              <button className="home-button" onClick={openLogin}>
-                Login Now
+
+              <button
+                className="home-btn secondary"
+                onClick={() => {
+                  dispatch(clearArtisanMessages());
+                  setShowLogin(true);
+                }}
+              >
+                Login
               </button>
             </div>
           </div>
+
+          {/* IMAGE + COMMENTS */}
           <div className="home-image">
-           <img src="https://mobilenig.com/assets/img/hero.png" alt="" />
-         </div>
+            <img src={img} alt="artisan" />
+
+<div className="comment-bubble bubble-1">
+  <div className="bubble-header">
+    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="John Doe" />
+    <span className="bubble-name">John Doe</span>
+  </div>
+  <p>“Got my first job in 24hrs!”</p>
+</div>
+
+<div className="comment-bubble bubble-2">
+  <div className="bubble-header">
+    <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Jane Smith" />
+    <span className="bubble-name">Jane Smith</span>
+  </div>
+  <p>“Clients message me daily now”</p>
+</div>
+
+<div className="comment-bubble bubble-3">
+  <div className="bubble-header">
+    <img src="https://randomuser.me/api/portraits/men/55.jpg" alt="Mike Lee" />
+    <span className="bubble-name">Mike Lee</span>
+  </div>
+  <p>“This platform changed my income”</p>
+</div>
+
+          </div>
         </div>
+
+  {/* SOCIAL FOOTER */}
+      <footer className="landing-footer">
+        {/* <p>Follow & Connect With Us</p> */}
+        <div className="social-icons">
+          <FaInstagram />
+          <FaFacebookF />
+          <FaTwitter />
+          <FaTiktok />
+          <FaLinkedinIn />
+        </div>
+      </footer>
       </section>
 
-      {/* Register Modal */}
+    
+
+      {/* REGISTER MODAL */}
       <Modal
         isOpen={showRegister}
         onClose={() => {
           setShowRegister(false);
-          dispatch(clearArtisanMessages()); // ✅ reset on close too
+          dispatch(clearArtisanMessages());
         }}
       >
         <ArtisanRegister />
       </Modal>
 
-      {/* Login Modal */}
+      {/* LOGIN MODAL */}
       <Modal
         isOpen={showLogin}
         onClose={() => {
           setShowLogin(false);
-          dispatch(clearArtisanMessages()); // ✅ reset on close too
+          dispatch(clearArtisanMessages());
         }}
       >
         <ArtisanLogin />

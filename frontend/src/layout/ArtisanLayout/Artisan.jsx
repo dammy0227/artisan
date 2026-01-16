@@ -4,7 +4,6 @@ import "./Artisan.css";
 const ArtisanLayout = ({ activeTab, setActiveTab, handleLogout, children }) => {
   return (
     <div className="artisan-container">
-      {/* Sidebar */}
       <aside className="artisan-sidebar">
         <h2>Artisan</h2>
         <nav className="artisan-nav">

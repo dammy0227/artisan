@@ -1,4 +1,3 @@
-// Footer.jsx
 import React from "react";
 import "./Footer.css";
 
@@ -7,7 +6,7 @@ const Footer = () => {
     <footer className="footer">
       <div className="footer-container">
         
-        {/* About */}
+   
         <div className="footer-section">
           <h3>About Us</h3>
           <p>
@@ -18,7 +17,7 @@ const Footer = () => {
           </p>
         </div>
 
-        {/* Services */}
+    
         <div className="footer-section">
           <h3>Our Services</h3>
           <ul>
@@ -31,7 +30,6 @@ const Footer = () => {
           </ul>
         </div>
 
-        {/* Contact Info */}
         <div className="footer-section">
           <h3>Contact Info</h3>
           <p>📍 Lagos, Nigeria</p>
@@ -39,7 +37,7 @@ const Footer = () => {
           <p>📧 support@artisanconnect.com</p>
         </div>
 
-        {/* Get in Touch */}
+ 
         <div className="footer-section">
           <h3>Get in Touch</h3>
           <p>Follow us on social media and get our app:</p>
@@ -50,7 +48,7 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Bottom Bar */}
+     
       <div className="footer-bottom">
         <p>© {new Date().getFullYear()} ArtisanConnect. All Rights Reserved.</p>
       </div>

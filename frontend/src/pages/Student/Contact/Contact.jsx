@@ -40,13 +40,12 @@ const ContactForm = () => {
       </p>
 
       <div className="contact-wrapper">
-        {/* Left Side - Image */}
         <div className="contact-image">
           <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQL5mqoqlMvt1_W3RcLb4JjXeS2rI5p0ofRmg&s"
           />
         </div>
 
-        {/* Right Side - Form */}
+        
         <form className="contact-form" onSubmit={handleSubmit}>
           <div className="form-group">
             <label>Name</label>

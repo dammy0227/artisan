@@ -26,7 +26,7 @@ const ArtisanLogin = () => {
   return (
     <div className="login-container">
       <form onSubmit={handleSubmit} className="login-form">
-        <h2 className="login-title">Artisan Login</h2>
+        <h2 className="login-titles">Artisan Login</h2>
 
         {submitted && error && <p className="login-error">{error}</p>}
 

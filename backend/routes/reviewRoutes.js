@@ -10,23 +10,16 @@ import { authorizeRoles } from "../middleware/roleMiddleware.js";
 
 const router = express.Router();
 
-// All routes require authentication
 router.use(protect);
 
-// ---------------------
-// Student routes
-// ---------------------
+
 router.post("/", authorizeRoles("student"), createReview); 
 router.get("/student/me", authorizeRoles("student"), getReviewsForStudent); 
 
-// ---------------------
-// Artisan routes
-// ---------------------
+
 router.get("/artisan/me", authorizeRoles("artisan"), getReviewsForLoggedArtisan);
 
-// ---------------------
-// Public / Artisan routes
-// ---------------------
+
 router.get("/:artisanId", getReviewsForArtisan); 
 
 export default router;

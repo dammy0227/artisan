@@ -9,6 +9,14 @@
       border-radius: 5px;
 }
 
-.Login-title{
-    color:#0c0091 ;
+.login-container{
+    background-color: white;
+    padding: 20px;
+    margin: 20px;
+      border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.login-titles{
+    color: #00a63f !important;
 }

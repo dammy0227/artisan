@@ -10,19 +10,14 @@ import { authorizeRoles } from "../middleware/roleMiddleware.js";
 
 const router = express.Router();
 
-// All booking routes require authentication
 router.use(protect);
 
-// ---------------------
-// Student routes
-// ---------------------
-router.post("/", authorizeRoles("student"), createBooking); // Create a booking
-router.get("/student", authorizeRoles("student"), getBookingByStudent); // Get bookings for logged-in student
 
-// ---------------------
-// Artisan routes
-// ---------------------
-router.get("/artisan", authorizeRoles("artisan"), getBookingByArtisan); // Get bookings for logged-in artisan
-router.put("/artisan/:bookingId", authorizeRoles("artisan"), updateBookingStatus); // Update booking status
+router.post("/", authorizeRoles("student"), createBooking); 
+router.get("/student", authorizeRoles("student"), getBookingByStudent); 
+
+
+router.get("/artisan", authorizeRoles("artisan"), getBookingByArtisan);
+router.put("/artisan/:bookingId", authorizeRoles("artisan"), updateBookingStatus); 
 
 export default router;

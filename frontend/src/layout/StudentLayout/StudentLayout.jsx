@@ -1,12 +1,15 @@
 import React from "react";
 import './StudentLayout.css'
+import img from '../../assets/artisan.png'
 
 const StudentLayout = ({ activeTab, setActiveTab, handleLogout, children }) => {
   return (
-    <div className="student-container">
+    <div className="students-container">
       {/* Sidebar */}
       <aside className="student-sidebar">
-        <h2>Student</h2>
+        <div className="landing-icon">
+          <img src={img} alt="" />
+        </div>
         <nav className="student-nav">
           <button
             className={`student-button ${activeTab === "bookArtisan" ? "active" : ""}`}
@@ -20,18 +23,26 @@ const StudentLayout = ({ activeTab, setActiveTab, handleLogout, children }) => {
           >
             Bookings
           </button>
+
+           <button
+            className={`student-button ${activeTab === "reviews" ? "active" : ""}`}
+            onClick={() => setActiveTab("reviews")}
+          >
+            Reviews
+          </button>
+
           <button
             className={`student-button ${activeTab === "profile" ? "active" : ""}`}
             onClick={() => setActiveTab("profile")}
           >
             Profile
           </button>
-          <button
+          {/* <button
             className={`student-button ${activeTab === "reviews" ? "active" : ""}`}
             onClick={() => setActiveTab("reviews")}
           >
             Reviews
-          </button>
+          </button> */}
           <button
             className="student-button logout-button"
             onClick={handleLogout}
@@ -42,7 +53,9 @@ const StudentLayout = ({ activeTab, setActiveTab, handleLogout, children }) => {
       </aside>
 
       {/* Main content */}
-      <main className="student-main">{children}</main>
+      <div>
+        <main className="student-main">{children}</main>
+      </div>
     </div>
   );
 };

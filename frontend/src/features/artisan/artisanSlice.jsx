@@ -35,6 +35,7 @@ const artisanSlice = createSlice({
       state.error = null;
       state.successMessage = null;
       state.currentWork = null;
+      state.loading = false; 
     },
   },
   extraReducers: (builder) => {
@@ -161,9 +162,7 @@ const artisanSlice = createSlice({
         state.error = action.payload;
       })
 
-      // --------------------------
-      // Get All Approved Artisans
-      // --------------------------
+    
       .addCase(getArtisans.pending, (state) => {
         state.loading = true;
       })
