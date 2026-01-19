@@ -49,8 +49,8 @@ const Booking = () => {
                   <span className="subtext">
                     Email: {booking.student?.email} <br />
                     Phone: {booking.student?.phone} <br />
-                    Department: {booking.student?.department} <br />
-                    Faculty: {booking.student?.faculty}
+                    {/* Department: {booking.student?.department} <br />
+                    Faculty: {booking.student?.faculty} */}
                   </span>
                 </td>
                 <td>{booking.jobDetails}</td>

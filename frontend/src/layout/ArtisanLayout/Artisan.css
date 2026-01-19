@@ -1,0 +1,136 @@
+/* ================= CONTAINER ================= */
+.artisan-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: #f9fafb;
+  font-family: 'Arial', sans-serif;
+}
+
+/* ================= NAVBAR ================= */
+.artisan-sidebar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 72px;
+  z-index: 1000;
+  background: rgba(9, 156, 65, 0.95);
+  backdrop-filter: blur(8px);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px;
+}
+
+/* ================= LOGO/TITLE ================= */
+.artisan-sidebar h2 {
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* ================= NAV ================= */
+.artisan-nav {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* ================= BUTTONS ================= */
+.artisan-button {
+  background: transparent;
+  border: none;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+}
+
+.artisan-button:hover {
+  background: green;
+}
+
+.artisan-button.active {
+  background: green;
+  color: white;
+  font-weight: 600;
+}
+
+/* ================= LOGOUT ================= */
+.logout-button {
+  background: #dc2626;
+  color: white;
+}
+
+.logout-button:hover {
+  background: #b91c1c;
+}
+
+/* ================= MAIN CONTENT ================= */
+.artisan-main {
+  margin-top: 72px; /* navbar height */
+  padding: 2rem;
+}
+
+/* ================= TABLET ================= */
+@media (max-width: 1024px) {
+  .artisan-sidebar {
+    padding: 0 20px;
+  }
+
+  .artisan-button {
+    padding: 8px 14px;
+    font-size: 13px;
+  }
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+  .artisan-sidebar {
+    height: 64px;
+    padding: 0 14px;
+    overflow-x: auto;
+  }
+
+  .artisan-sidebar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .artisan-sidebar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .artisan-nav {
+    gap: 8px;
+  }
+
+  .artisan-button {
+    padding: 7px 12px;
+    font-size: 12px;
+  }
+
+  .logout-button {
+    padding: 7px 12px;
+    font-size: 12px;
+  }
+
+  .artisan-main {
+    margin-top: 64px;
+    padding: 1rem;
+  }
+}
+
+/* ================= SMALL PHONES ================= */
+@media (max-width: 480px) {
+  .artisan-button {
+    font-size: 11px;
+    padding: 6px 10px;
+  }
+}

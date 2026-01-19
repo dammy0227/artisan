@@ -21,14 +21,14 @@ const StudentLayout = ({ activeTab, setActiveTab, handleLogout, children }) => {
             className={`student-button ${activeTab === "bookings" ? "active" : ""}`}
             onClick={() => setActiveTab("bookings")}
           >
-            Bookings
+           My Bookings
           </button>
 
            <button
             className={`student-button ${activeTab === "reviews" ? "active" : ""}`}
             onClick={() => setActiveTab("reviews")}
           >
-            Reviews
+            Give Reviews
           </button>
 
           <button

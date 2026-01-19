@@ -1,0 +1,240 @@
+/* ===== ROOT ===== */
+.admin-container {
+  display: flex;
+  height: 100vh;
+}
+
+/* ===== MOBILE HEADER ===== */
+.mobile-header {
+  display: none;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+  gap: 1rem;
+}
+
+.mobile-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #28a745;
+  flex: 1;
+}
+
+.hamburger-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #28a745;
+}
+
+/* ===== SIDEBAR ===== */
+.admin-sidebar {
+  width: 220px;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem 1rem;
+  box-shadow: 7px 0 7px rgba(0, 0, 0, 0.07);
+  transition: transform 0.3s ease;
+  position: relative;
+}
+
+.admin-sidebar h2 {
+  margin-bottom: 2rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #28a745;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color:#28a745 !important;
+  position: absolute;
+  background-color: transparent !important;
+  top: 1rem;
+  right: 1rem;
+  display: none;
+}
+
+/* ===== NAV BUTTONS ===== */
+.admin-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  flex: 1;
+}
+
+.admin-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1rem;
+  text-align: left;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  background-color: transparent;
+  color: gray;
+}
+
+.admin-button svg {
+  font-size: 1rem;
+}
+
+.admin-button:hover {
+  background-color: #e6f4ea;
+  transform: translateX(2px);
+  color: #28a745;
+}
+
+.admin-button.active {
+  background-color: #28a745;
+  color: white;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.admin-button.active svg {
+  color: white;
+}
+
+/* ===== LOGOUT ===== */
+.admin-bottom-buttons {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.admin-logout-button {
+  color: #dc2626;
+  font-weight: 600;
+}
+
+.admin-logout-button:hover {
+  color: white;
+  background-color: #b91c1c;
+  transform: translateX(2px);
+}
+
+/* ===== MAIN CONTENT ===== */
+.admin-main {
+  flex: 1;
+  padding: 2rem;
+  overflow-y: auto;
+  background-color: #f8fafc;
+}
+
+/* ===== SCROLLBAR ===== */
+.admin-main::-webkit-scrollbar {
+  width: 8px;
+}
+
+.admin-main::-webkit-scrollbar-thumb {
+  background-color: rgba(0,0,0,0.1);
+  border-radius: 4px;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+  .mobile-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+    background-color:#28a745;
+    border-bottom: 1px solid #e5e7eb;
+    z-index: 110;
+    position: fixed;
+    width: 100%;
+    top: 0;
+  }
+
+  .mobile-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #28a745;
+  }
+
+  .hamburger-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: white;
+  }
+
+  .admin-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 75vw;
+    max-width: 280px;
+    transform: translateX(-100%);
+    z-index: 120; 
+    background-color:#28a745;
+    box-shadow: 4px 0 12px rgba(0,0,0,0.15);
+    padding: 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+  }
+
+  .admin-sidebar.open {
+    transform: translateX(0);
+  }
+
+  .close-btn {
+    display: block;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    color: white !important;
+  }
+
+  .sidebar-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0,0,0,0.4);
+    z-index: 100; 
+  }
+
+  .admin-nav {
+    margin-top: 3rem;
+    gap: 1rem;
+  }
+
+  .admin-bottom-buttons {
+    margin-top: auto;
+  }
+
+  .admin-button{
+    color: white;
+  }
+
+  .admin-button.active{
+    background-color: whitesmoke;
+    color: #28a745;
+  }
+
+ .admin-button.active svg {
+  color:#28a745;
+}
+
+
+  .admin-main {
+    flex: 1;
+    padding: 1rem;
+    margin-top: 60px; 
+    overflow-y: auto;
+    background-color: #f8fafc !;
+  }
+}
+

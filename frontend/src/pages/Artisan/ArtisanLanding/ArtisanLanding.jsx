@@ -16,7 +16,7 @@ const ArtisanLanding = () => {
   const dispatch = useDispatch();
 
   return (
-    <div>
+    <div className="landing-wrapper">
       {/* NAVBAR */}
       <nav className="landing-navbar">
         <div className="landing-icon">

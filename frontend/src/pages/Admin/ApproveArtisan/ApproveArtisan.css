@@ -10,7 +10,7 @@ h2 {
 }
 
 .table-wrapper {
-  overflow-x: auto; /* 👈 makes table scrollable on small screens */
+  overflow-x: auto; 
 }
 
 .artisan-table {
@@ -41,7 +41,7 @@ h2 {
 }
 
 .approve-btn {
-  background-color: #28a745;
+  background-color: #28a745 !important;
   margin-right: 0.5rem;
 }
 

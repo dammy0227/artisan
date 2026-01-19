@@ -38,8 +38,8 @@ const Bookings = () => {
                   {booking.artisan?.fullName || "Unknown"} <br />
                   <span className="subtext">
                     Skill: {booking.artisan?.skillCategory} <br />
-                    Location: {booking.artisan?.location} <br />
-                    Rating: {booking.artisan?.rating || "N/A"}
+                    {/* Location: {booking.artisan?.location} <br />
+                    Rating: {booking.artisan?.rating || "N/A"} */}
                   </span>
                 </td>
                 <td>{booking.jobDetails}</td>

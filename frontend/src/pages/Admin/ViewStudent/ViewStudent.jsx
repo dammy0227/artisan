@@ -33,8 +33,6 @@ const ViewStudent = () => {
 
   return (
     <div className="student-container">
-      <h2 className="student-title">All Students</h2>
-
       
       {successMessage && (
         <div className="success-message">{successMessage}</div>

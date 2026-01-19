@@ -95,7 +95,7 @@ const BookArtisan = () => {
 
   return (
     <div className="book-artisan-container">
-      <h2>Find and Book an Artisan</h2>
+      <h2 className="book-artisan">Find and Book an Artisan</h2>
 
       {/* Real-time search input */}
       <input
@@ -124,7 +124,7 @@ const BookArtisan = () => {
                 />
               </div>
 
-              <h3>{artisan.fullName}</h3>
+              <h3 className="artisan-name">{artisan.fullName}</h3>
               <p>📱 Phone: {artisan.phone}</p>
               <p>Skill: {artisan.skillCategory}</p>
               <p>Location: {artisan.location}</p>
@@ -230,7 +230,7 @@ const BookArtisan = () => {
             <span className="close-btn" onClick={closeBookingModal}>
               ✖
             </span>
-            <h3>Book {selectedArtisanForBooking?.fullName}</h3>
+            <h3 style={{color: '#1e7e34'}}>Book {selectedArtisanForBooking?.fullName}</h3>
             <textarea
               placeholder="Enter job details..."
               value={bookingDetails.jobDetails}

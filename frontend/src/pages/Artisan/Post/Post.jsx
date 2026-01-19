@@ -171,7 +171,7 @@ const Post = () => {
               ) : (
                 // Normal view
                 <div className="work-info">
-                  <h3>{work.title}</h3>
+                  <p style={{fontWeight:'bold', padding:'5px', color:'#008a34'}}>{work.title}</p>
                   {work.image && (
                     <img
                       src={work.image}
@@ -182,7 +182,7 @@ const Post = () => {
                     />
                   )}
                   <p>{work.description}</p>
-                  <div style={{ display: "flex", justifyContent: "space-between" }}>
+                  <div style={{ display: "flex", justifyContent: "space-between"}}>
                     <button
                       onClick={() => startEdit(work)}
                       className="artisan-btn green-btn"

@@ -8,7 +8,7 @@
 
 .title {
   text-align: center;
-  color: #0c0091;
+  color:#00a63f;
   margin-bottom: 2rem;
   font-size: 2.2rem;
   font-weight: 700;
@@ -52,7 +52,7 @@
 }
 
 .student-name {
-  color: #0c0091;
+  color:#00a63f;
   margin: 0 0 0.3rem 0;
   font-size: 1.2rem;
   font-weight: 600;

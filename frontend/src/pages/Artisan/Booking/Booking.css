@@ -11,7 +11,7 @@
   font-weight: bold;
   margin-bottom: 20px;
   text-align: left;
-  color:  #0c0091 ;
+  color:#218838 ;
 }
 
 .table-wrapper {
@@ -63,7 +63,7 @@
   color: #d39e00;
 }
 .status.completed {
-  color: #007bff;
+  color:#218838 !important;
 }
 .status.rejected,
 .status.cancelled {
@@ -84,11 +84,11 @@
 }
 
 .loading {
-  color:  #0c0091 ;
+  color:#218838 ;
 }
 
 .no-bookings {
-  color:  #0c0091 ;
+  color:#218838 ;
 }
 
 /* Action Buttons */
@@ -128,11 +128,11 @@
 
 /* Complete Button */
 .btn-complete {
-  background-color: #007bff;
+  background-color:#218838;
   color: #fff;
 }
 .btn-complete:hover {
-  background-color: #0069d9;
+  background-color:#28a745;
 }
 
 /* ====== Responsive Styles ====== */

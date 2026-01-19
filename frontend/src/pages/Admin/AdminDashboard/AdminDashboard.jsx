@@ -6,9 +6,10 @@ import ApproveArtisan from "../ApproveArtisan/ApproveArtisan";
 import ViewStudent from "../ViewStudent/ViewStudent";
 import { logoutAdmin } from "../../../features/admin/adminSlice";
 import { useNavigate } from "react-router-dom";
+import AdminBoard from "../AdminBoard/AdminBoard";
 
 const AdminDashboard = () => {
-  const [activeTab, setActiveTab] = useState("chart");
+  const [activeTab, setActiveTab] = useState("admin");
   const dispatch = useDispatch();
 
      const navigate = useNavigate();
@@ -21,14 +22,16 @@ const AdminDashboard = () => {
 
   const renderContent = () => {
     switch (activeTab) {
-      case "chart":
-        return <Chart />;
+      case 'admin':
+        return <AdminBoard />
       case "approve":
         return <ApproveArtisan />;
       case "students":
         return <ViewStudent />;
-      default:
+        case "chart":
         return <Chart />;
+      default:
+        return <AdminBoard />;
     }
   };
 

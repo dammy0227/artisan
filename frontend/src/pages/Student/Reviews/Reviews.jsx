@@ -118,13 +118,14 @@ const Reviews = () => {
             <button type="submit">Submit Review</button>
           </div>
         </form>
-      )}
+      )} <br />
 
       <h3>Your Previous Reviews</h3>
       {reviews?.length === 0 && <p>No reviews submitted yet.</p>}
       <ul className="review-list">
         {reviews?.map((rev) => (
           <li key={rev._id}>
+            <h4>Artisan: {rev.artisan?.fullName}</h4>
             <p>
               Rating:{" "}
               {[1, 2, 3, 4, 5].map((star) => (
@@ -134,7 +135,6 @@ const Reviews = () => {
               ))}
               <br />
               Review: {rev.reviewText} <br />
-              Artisan: {rev.artisan?.fullName}
             </p>
           </li>
         ))}

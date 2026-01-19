@@ -1,24 +1,27 @@
 import React from "react";
 import "./Artisan.css";
+import img from '../../assets/artisan.png'
 
 const ArtisanLayout = ({ activeTab, setActiveTab, handleLogout, children }) => {
   return (
     <div className="artisan-container">
       <aside className="artisan-sidebar">
-        <h2>Artisan</h2>
+        <div className="landing-icon">
+            <img src={img} alt="" />
+        </div>
         <nav className="artisan-nav">
           <button
             className={`artisan-button ${activeTab === "booking" ? "active" : ""}`}
             onClick={() => setActiveTab("booking")}
-          >
-            Bookings
+          > 
+            My Bookings
           </button>
-          <button
+          {/* <button
             className={`artisan-button ${activeTab === "updateProfile" ? "active" : ""}`}
             onClick={() => setActiveTab("updateProfile")}
           >
             Update Profile
-          </button>
+          </button> */}
           <button
             className={`artisan-button ${activeTab === "reviewRating" ? "active" : ""}`}
             onClick={() => setActiveTab("reviewRating")}
@@ -29,7 +32,13 @@ const ArtisanLayout = ({ activeTab, setActiveTab, handleLogout, children }) => {
             className={`artisan-button ${activeTab === "Post" ? "active" : ""}`}
             onClick={() => setActiveTab("Post")}
           >
-            Post
+            My Work
+          </button>
+            <button
+            className={`artisan-button ${activeTab === "updateProfile" ? "active" : ""}`}
+            onClick={() => setActiveTab("updateProfile")}
+          >
+            Update Profile
           </button>
           <button
             className="artisan-button logout-button"

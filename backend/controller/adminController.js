@@ -46,7 +46,7 @@ export const getAnalytics = async (req, res) => {
     ]);
 
     res.json({
-      artisanCount,
+      artisanCount, 
       bookingCount,
       approvedArtisanCount,
       pendingArtisanCount,

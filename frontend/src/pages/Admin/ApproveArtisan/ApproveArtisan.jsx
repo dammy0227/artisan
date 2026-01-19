@@ -46,7 +46,7 @@ const ApproveArtisan = () => {
 
   return (
     <div className="approve-artisan-container">
-      <h2>Artisan Approvals</h2>
+      {/* <h2>Artisan Approvals</h2> */}
       <div className="table-wrapper">
         <table className="artisan-table">
           <thead>

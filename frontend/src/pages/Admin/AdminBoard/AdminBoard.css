@@ -1,0 +1,179 @@
+/* ================= ROOT ================= */
+.admin-dashboard {
+  min-height: 100vh;
+  /* padding: 1rem; */
+  color: #1f2937;
+  box-sizing: border-box;
+}
+
+/* LOADING */
+.loading-text {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #6b7280;
+}
+
+/* ================= KPI GRID ================= */
+.kpi-grid {
+  display: flex;
+  gap: 1rem; 
+  margin-bottom: 2rem;
+  flex-wrap: wrap; /* allow cards to wrap on smaller screens */
+  justify-content: flex-start;
+}
+
+/* KPI CARD */
+.kpi-card {
+  background: #fff;
+  padding: 0.8rem; 
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
+  gap: 0.8rem; 
+  flex: 1 1 150px; /* grow/shrink, min width */
+  min-width: 150px; 
+  transition: 0.3s ease;
+}
+
+.kpi-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+/* PROGRESS */
+.progress-wrapper {
+  width: 50px;
+  height: 50px;
+  flex-shrink: 0;
+}
+
+/* ICON */
+.kpi-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #f9fafb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  flex-shrink: 0;
+}
+
+/* TEXT */
+.kpi-info h4 {
+  font-size: 12px;
+  font-weight: 600;
+  color: #374151;
+  margin: 0;
+}
+
+.kpi-info p {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-top: 2px;
+}
+
+/* ================= SECTIONS ================= */
+.dashboard-section {
+  background: #fff;
+  padding: 1.2rem; 
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  margin-bottom: 1.5rem;
+}
+
+/* CHART TITLES */
+.chart-title {
+  color: #1f2937;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+/* ================= TABLE ================= */
+.dashboard-table,
+.artisan-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.dashboard-table th,
+.dashboard-table td,
+.artisan-table th,
+.artisan-table td {
+  padding: 0.5rem 0.75rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.dashboard-table th,
+.artisan-table th {
+  background: #f9fafb;
+  font-weight: 600;
+  text-align: left;
+}
+
+/* ================= BUTTONS ================= */
+.approve-btn,
+.reject-btn {
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 0.85rem;
+  transition: 0.2s ease;
+}
+
+.approve-btn {
+  background-color: #10b981;
+  color: #fff;
+}
+
+.approve-btn:hover {
+  background-color: #059669;
+}
+
+.reject-btn {
+  background-color: #ef4444;
+  color: #fff;
+}
+
+.reject-btn:hover {
+  background-color: #b91c1c;
+}
+
+.admin-dashboard-title{
+      padding: 30px 0 !important;
+}
+
+.admin-dashboard-title > h1{
+      font-size: 30px;
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+  .kpi-grid {
+    flex-wrap: wrap; /* wrap cards */
+    gap: 0.5rem;
+  }
+
+  .kpi-card {
+    flex: 1 1 100%; /* ONE card per row on mobile */
+    min-width: 100%; 
+  }
+
+  .chart-title {
+    font-size: 15px;
+  }
+
+  /* Tables responsive */
+  .dashboard-table,
+  .artisan-table {
+    font-size: 0.85rem;
+  }
+
+  .dashboard-section {
+    padding: 1rem;
+  }
+}

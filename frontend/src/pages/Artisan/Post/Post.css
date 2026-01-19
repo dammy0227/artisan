@@ -1,5 +1,5 @@
 .artisan-posts {
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
   font-family: Arial, sans-serif;
@@ -60,10 +60,9 @@
 .works-list {
   display: flex;
   gap: 10px;
-  max-width: 1000px; /* ✅ Add this */
-  margin: 0 auto; /* ✅ Center the works-list */
+  max-width: 1200px; 
+  margin: 0 auto; 
   flex-wrap: wrap;
-  justify-content: center;
 
 }
 
