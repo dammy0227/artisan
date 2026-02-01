@@ -1,145 +1,293 @@
-/* ================= CONTAINER ================= */
+/* ===== CONTAINER ===== */
 .students-container {
   display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  background: #f9fafb;
-  font-family: Arial, sans-serif;
+  height: 100vh;
+  position: relative;
 }
 
-/* ================= NAVBAR ================= */
+/* ===== SIDEBAR ===== */
 .student-sidebar {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  height: 72px;
-  z-index: 1000;
-  background: rgba(9, 156, 65, 0.95);
-  backdrop-filter: blur(8px);
-
+   width: 240px;
+  min-width: 240px;
+  background: white;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 32px;
+  flex-direction: column;
+  border-right: 1px solid #e5e7eb;
+  padding: 1.5rem 1rem;
+  position: relative;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.05);
+  z-index: 10;
 }
 
-/* ================= LOGO ================= */
-.student-sidebar .landing-icon {
-  display: flex;
-  align-items: center;
-  height: 100%;
+/* ===== SIDEBAR HEADER ===== */
+.student-sidebar-header {
+  text-align: center;
+  padding: 1rem 0 1.5rem 0;
+  margin-bottom: 0.5rem;
+  border-bottom: 1px solid #f1f5f9;
+  position: relative;
 }
 
-.student-sidebar .landing-icon img {
-  height: 100px;
-  width: auto;
-  object-fit: contain;
+.student-sidebar h2 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #22c55e ;
+  margin: 0;
+  letter-spacing: 0.5px;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 5px;
 }
 
-/* ================= NAV ================= */
+.student-sidebar h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 3px;
+  background: linear-gradient(135deg, #16a34a 0%, #22c55e 100%);
+  border-radius: 2px;
+}
+
+/* ===== NAV ===== */
 .student-nav {
   display: flex;
-  align-items: center;
-  gap: 12px;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1;
 }
 
-/* ================= BUTTONS ================= */
+/* ===== BUTTONS ===== */
 .student-button {
-  background: transparent;
-  border: none;
-  color: white;
-  padding: 10px 16px;
-  border-radius: 999px;
-  font-size: 14px;
-  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  border: 1px solid transparent;
   cursor: pointer;
-  transition: all 0.25s ease;
+  background: transparent;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #4b5563;
+  transition: all 0.2s ease;
   white-space: nowrap;
+  width: 100%;
+  text-align: left;
+  position: relative;
+}
+
+.student-button svg {
+  flex-shrink: 0;
+  font-size: 1.1rem;
+  transition: transform 0.2s ease;
 }
 
 .student-button:hover {
-  background: green;
+  background: #f3f4f6;
+  transform: translateX(5px);
+  border-color: #e5e7eb;
+}
+
+.student-button:hover svg {
+  transform: scale(1.1);
 }
 
 .student-button.active {
-  background:green;
+ background: linear-gradient(135deg, #16a34a 0%, #22c55e 100%);
   color: white;
   font-weight: 600;
+  border-color:#16a34a;
+ box-shadow: 0 4px 12px rgba(22, 163, 74, 0.2);
 }
 
-/* ================= LOGOUT ================= */
+.student-button.active::before {
+  content: '';
+  position: absolute;
+  left: -1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 60%;
+  background:#16a34a;
+  border-radius: 0 4px 4px 0;
+}
+
+/* ===== CLOSE BUTTON ===== */
+.student-close-btn {
+  display: none;
+  border: none;
+  background: transparent !important;
+  cursor: pointer;
+  color: #6b7280;
+  padding: 0.5rem;
+  border-radius: 8px;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 5;
+  transition: all 0.2s ease;
+}
+
+.student-close-btn:hover {
+  background: #f3f4f6 !important;
+  color: #374151;
+  transform: rotate(90deg);
+}
+
+/* ===== LOGOUT BOTTOM ===== */
+.student-bottom {
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid #f1f5f9;
+}
+
 .logout-button {
-  background: #dc2626;
-  color: white;
+  color: #dc2626;
+  border: 1px solid #fee2e2;
+  background: #fef2f2;
 }
 
 .logout-button:hover {
-  background: #b91c1c;
+  background: #dc2626 !important;
+  color: white !important;
+  border-color: #dc2626;
+  transform: translateX(5px) !important;
 }
 
-/* ================= MAIN CONTENT ================= */
+/* ===== MAIN ===== */
 .student-main {
-  margin-top: 72px; /* navbar height */
-  padding: 2rem;
+   flex: 1;
+  overflow-y: auto;
+  animation: fadeIn 0.3s ease;
 }
 
-/* ================= TABLET ================= */
-@media (max-width: 1024px) {
-  .student-sidebar {
-    padding: 0 20px;
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
   }
-
-  .student-button {
-    padding: 8px 14px;
-    font-size: 13px;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-/* ================= MOBILE ================= */
+/* ===== MOBILE HEADER ===== */
+.student-mobile-header {
+  display: none;
+  align-items: center;
+  padding: 1rem;
+  background: linear-gradient(135deg, #16a34a 0%, #22c55e 100%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 110;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.student-hamburger {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  cursor: pointer;
+  color: white;
+  padding: 0.5rem;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.student-hamburger:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
+}
+
+/* ===== MOBILE ===== */
 @media (max-width: 768px) {
-  .student-sidebar {
-    height: 64px;
-    padding: 0 14px;
-    overflow-x: auto;
-  }
-
-  .student-sidebar::-webkit-scrollbar {
-    display: none;
+  .student-mobile-header {
+    display: flex;
   }
 
   .student-sidebar {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 85%;
+    max-width: 280px;
+    transform: translateX(-100%);
+    z-index: 120;
+    box-shadow: 4px 0 25px rgba(0, 0, 0, 0.15);
+    padding-top: 2.5rem;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
-  .student-sidebar .landing-icon img {
-    height: 34px;
-  }
-
-  .student-nav {
-    gap: 8px;
-  }
-
-  .student-button {
-    padding: 7px 12px;
-    font-size: 12px;
-  }
-
-  .logout-button {
-    padding: 7px 12px;
-    font-size: 12px;
+  .student-sidebar.open {
+    transform: translateX(0);
   }
 
   .student-main {
-    margin-top: 64px;
-    padding: 1rem;
+    margin-top: 70px;
+    border-radius: 10px;
+    min-height: calc(100vh - 86px);
+  }
+
+  .student-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(2px);
+    z-index: 100;
+    animation: overlayFade 0.2s ease;
+  }
+
+  @keyframes overlayFade {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  .student-close-btn {
+    display: block;
   }
 }
 
-/* ================= SMALL PHONES ================= */
-@media (max-width: 480px) {
-  .student-button {
-    font-size: 11px;
-    padding: 6px 10px;
+/* Custom scrollbar for main content */
+.student-main::-webkit-scrollbar {
+  width: 6px;
+}
+
+.student-main::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 3px;
+}
+
+.student-main::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+
+.student-main::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Tablet responsive */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .student-sidebar {
+    width: 220px;
+    min-width: 220px;
+    padding: 1rem;
+  }
+  
+  .student-main {
+    padding: 1.5rem;
   }
 }

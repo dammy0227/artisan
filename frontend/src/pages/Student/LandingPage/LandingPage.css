@@ -215,7 +215,7 @@
   }
 
   .menu-icon {
-    display: block;
+    display: block !important;
   }
 
   .landing-nav-list {

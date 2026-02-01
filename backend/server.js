@@ -27,10 +27,10 @@ initSocket(server);
 
 app.use(cors({
   origin: [
-    "https://artisan-sigma.vercel.app",
+    "artisans-work.vercel.app",
     "http://localhost:5173"
   ],
-  methods: ["*"],   
+  methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
   credentials: true,
 }));
 

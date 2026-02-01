@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import AdminLayout from "../../../layout/AdminLayout/AdminLayout";
-import Chart from "../Chart/Chart";
 import ApproveArtisan from "../ApproveArtisan/ApproveArtisan";
 import ViewStudent from "../ViewStudent/ViewStudent";
 import { logoutAdmin } from "../../../features/admin/adminSlice";
@@ -28,8 +27,6 @@ const AdminDashboard = () => {
         return <ApproveArtisan />;
       case "students":
         return <ViewStudent />;
-        case "chart":
-        return <Chart />;
       default:
         return <AdminBoard />;
     }
