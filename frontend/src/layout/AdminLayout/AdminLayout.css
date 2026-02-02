@@ -264,3 +264,11 @@
 .admin-button:active {
   transform: scale(0.98);
 }
+
+
+@media (max-width: 450px) {
+ 
+ .admin-button{
+    padding-bottom: 50px;
+  }
+}

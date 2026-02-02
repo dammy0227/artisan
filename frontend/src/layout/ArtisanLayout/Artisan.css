@@ -293,3 +293,10 @@
     padding: 1.5rem;
   }
 }
+
+@media (max-width: 450px) {
+ 
+ .artisan-bottom{
+    padding-bottom: 50px;
+  }
+}
