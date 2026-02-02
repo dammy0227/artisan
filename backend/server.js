@@ -27,7 +27,7 @@ initSocket(server);
 
 app.use(cors({
   origin: [
-    "https//:artisans-work.vercel.app",
+    "https://artisans-work.vercel.app",
     "http://localhost:5173"
   ],
   methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
