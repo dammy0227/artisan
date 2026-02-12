@@ -20,10 +20,11 @@ import LandingPage from "./pages/Student/LandingPage/LandindPage";
 
 import StudentLogin from "./pages/Student/StudentLogin/StudentLogin";
 import ArtisanLogin from "./pages/Artisan/ArtisanLogin/ArtisanLogin";
-import AdminLogin from "./pages/Admin/AdminLogin/AdminLogin";
+
 
 import './App.css'
 import ArtisanLanding from "./pages/Artisan/ArtisanLanding/ArtisanLanding";
+import AuthPage from "./pages/Auth/AuthPage";
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
       <Routes>
         <Route path="/register/student" element={<StudentRegister />} />
         <Route path="/register/artisan" element={<ArtisanRegister />} />
+        <Route path="/" element={<AuthPage />} />
 
         <Route
           path="/admin/dashboard"
@@ -58,7 +60,7 @@ function App() {
         />
 
           <Route
-          path="/"
+          path="/LandingPage"
           element={
             <LandingPage />
           }
@@ -79,12 +81,7 @@ function App() {
           }
         />
 
-        <Route
-          path="/admin"
-          element={
-            <AdminLogin />
-          }
-        />
+     
 
         <Route
           path="/artisan"

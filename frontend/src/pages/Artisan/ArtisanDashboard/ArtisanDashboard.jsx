@@ -16,7 +16,7 @@ const ArtisanDashboard = () => {
 
     const handleLogout = () => {
       dispatch(logoutArtisan());
-        navigate("/artisan", { replace: true });
+        navigate("/", { replace: true });
     };
   
 

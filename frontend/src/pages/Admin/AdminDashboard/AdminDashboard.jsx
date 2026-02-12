@@ -16,7 +16,7 @@ const AdminDashboard = () => {
 
   const handleLogout = () => {
     dispatch(logoutAdmin());
-     navigate("/admin", { replace: true });
+     navigate("/", { replace: true });
   };
 
   const renderContent = () => {

@@ -26,9 +26,9 @@ const ProtectedRoute = ({ children, role }) => {
   if (!isAuthenticated) {
     switch (role) {
       case "admin":
-        return <Navigate to="/admin" replace />;
+        return <Navigate to="/" replace />;
       case "artisan":
-        return <Navigate to="/artisan" replace />;
+        return <Navigate to="/" replace />;
       case "student":
         return <Navigate to="/" replace />; 
       default:
