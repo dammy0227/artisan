@@ -4,7 +4,7 @@ import Slider from "react-slick";
 import { FaArrowLeft, FaArrowRight, FaQuoteRight, FaStar } from "react-icons/fa";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import "./testimonials.css";
+import "./Testimonials.css";
 
 const testimonials = [
   {
