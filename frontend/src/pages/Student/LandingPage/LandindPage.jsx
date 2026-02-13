@@ -27,23 +27,19 @@ const LandingPage = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  // Function to trigger animations for all section components
   const triggerSectionAnimation = (sectionId) => {
-    // Create and dispatch custom event for the specific section
+ 
     const event = new CustomEvent('triggerSectionAnimation', {
       detail: { sectionId }
     });
     window.dispatchEvent(event);
     
-    // Also update hash to help with direct navigation
     window.location.hash = sectionId;
   };
 
-  // Navigation handler for all links
   const handleNavClick = (sectionId) => {
     closeMenu();
-    
-    // Small delay to ensure scroll completes before triggering animation
+
     setTimeout(() => {
       triggerSectionAnimation(sectionId);
     }, 300);
@@ -181,7 +177,6 @@ const LandingPage = () => {
           </ul>
 
           <div className="navbar-right">
-            <button className="login-btn-mobile" onClick={openLogin}>Login</button>
             <div className="menu-icon" onClick={toggleMenu}>
               {menuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
             </div>

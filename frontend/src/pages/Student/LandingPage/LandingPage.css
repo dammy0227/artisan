@@ -16,7 +16,7 @@
   background: transparent;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -28,11 +28,10 @@
 }
 
 .navbar-container {
-
   width: 100%;
   padding: 0 20px;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -76,6 +75,7 @@
   list-style: none;
   margin: 0;
   padding: 0;
+ 
 }
 
 .landing-nav-list li a {
@@ -775,3 +775,5 @@
     max-width: 220px;
   }
 }
+
+
